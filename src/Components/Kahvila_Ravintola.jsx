@@ -4,9 +4,9 @@ import '../App.css';
 class KahvilaRavintola extends Component {
     render() {
         return (
-            <section id="kahvilaRavintola">
+            <main id="kahvilaRavintola">
                 <h1>Kahvila/Ravintola</h1>
-            </section>
+            </main>
         );
     }
 }

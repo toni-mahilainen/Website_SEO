@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Etusivu from './Etusivu';
 import Footer from './Footer';

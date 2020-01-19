@@ -4,9 +4,9 @@ import '../App.css';
 class Palaute extends Component {
     render() {
         return (
-            <section id="palaute">
+            <main id="palaute">
                 <h1>Palaute</h1>
-            </section>
+            </main>
         );
     }
 }

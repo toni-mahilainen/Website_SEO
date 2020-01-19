@@ -4,9 +4,9 @@ import '../App.css';
 class Huoltamo extends Component {
     render() {
         return (
-            <section id="huoltamo">
+            <main id="huoltamo">
                 <h1>Huoltamo</h1>
-            </section>
+            </main>
         );
     }
 }

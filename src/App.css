@@ -66,19 +66,80 @@ header {
   height: 10vh;
 }
 
+nav {
+  height: 5vh;
+}
+
 /* --------------------------------HEADER-------------------------------- */
 
 /* --------------------------------ETUSIVU-------------------------------- */
 
-#etusivu {
+#mainpage {
   text-align: center;
   overflow: auto;
   height: 75vh;
+  
+}
+
+#mainpageUpper, #mainpageLower {
+  height: 50%;
+}
+
+.carousel, .carousel-inner, .carousel-item {
+  height: 100%;
 }
 
 .carousel img {
-  width: 30%;
+  height: 100%;
   margin: auto;
+}
+
+.boxLinks {
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  border: black 2px solid;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  border-radius: 100px;
+  animation: 1s 1 toCircle;
+}
+
+.box:hover {
+  animation: 1s 1 toBox;
+  animation-fill-mode: forwards;
+}
+
+.box span {
+  align-self: center;
+}
+
+@keyframes toBox {
+  from {
+    border-radius: 100px;
+  }
+
+  to {
+    border-radius: 10px;
+  }
+}
+
+@keyframes toCircle {
+  from {
+    border-radius: 10px;
+  }
+
+  to {
+    border-radius: 100px;
+  }
 }
 
 /* --------------------------------ETUSIVU-------------------------------- */
