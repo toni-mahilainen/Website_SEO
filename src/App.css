@@ -62,8 +62,13 @@ table {
 /* --------------------------------HEADER-------------------------------- */
 
 header {
-  text-align: center;
   height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+header h1 {
+  align-self: center;
 }
 
 nav {
@@ -77,8 +82,7 @@ nav {
 #mainpage {
   text-align: center;
   overflow: auto;
-  height: 75vh;
-  
+  height: 70vh;
 }
 
 #mainpageUpper, #mainpageLower {
@@ -94,8 +98,18 @@ nav {
   margin: auto;
 }
 
+.mainpageHeader {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.mainpageHeader h1 {
+  align-self: center;
+}
+
 .boxLinks {
-  height: 100%;
+  height: 80%;
   padding-left: 10%;
   padding-right: 10%;
   display: flex;
@@ -146,30 +160,63 @@ nav {
 
 /* --------------------------------YRITYS-------------------------------- */
 
-#yritys {
+#company {
   text-align: center;
   overflow: auto;
   height: 75vh;
+}
+
+#companyNav {
+  display: flex;
+  justify-content: center;
+}
+
+#companyNav button {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 /* --------------------------------YRITYS-------------------------------- */
 
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
 
-#kahvilaRavintola {
+#coffeeRestaurant {
   text-align: center;
   overflow: auto;
   height: 75vh;
+}
+
+#coffeeRestaurantNav {
+  display: flex;
+  justify-content: center;
+}
+
+#coffeeRestaurantNav button {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
 
 /* --------------------------------HUOLTAMO-------------------------------- */
 
-#huoltamo {
+#service {
   text-align: center;
   overflow: auto;
   height: 75vh;
+}
+
+#serviceNav {
+  display: flex;
+  justify-content: center;
+}
+
+#serviceNav button {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 /* --------------------------------HUOLTAMO-------------------------------- */
@@ -191,8 +238,13 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10vh;
-  text-align: center;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+footer h1 {
+  align-self: center;
 }
 
 /* --------------------------------FOOTER-------------------------------- */

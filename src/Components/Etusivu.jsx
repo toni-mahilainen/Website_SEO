@@ -35,6 +35,9 @@ class Etusivu extends Component {
                     </Carousel>
                 </section>
                 <section id="mainpageLower">
+                    <div className="mainpageHeader">
+                        <h1>Tervetuloa SEO Kosken kotisivuille</h1>
+                    </div>
                     <div className="boxLinks">
                         <a className="box" href="#"><span>Yritys</span></a>
                         <a className="box" href="#"><span>Kahvila/Ravintola</span></a>
