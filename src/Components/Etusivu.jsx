@@ -15,21 +15,21 @@ class Etusivu extends Component {
                             <img className="d-block" src={lataus} alt="First slide" />
                             <Carousel.Caption>
                                 <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <p>Kuva 1</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img className="d-block" src={lataus1} alt="Second slide" />
                             <Carousel.Caption>
                                 <h3>Second slide label</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>Kuva 2</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img className="d-block" src={lataus2} alt="Third slide" />
                             <Carousel.Caption>
                                 <h3>Third slide label</h3>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                <p>Kuva3</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
@@ -39,10 +39,10 @@ class Etusivu extends Component {
                         <h1>Tervetuloa SEO Kosken kotisivuille</h1>
                     </div>
                     <div className="boxLinks">
-                        <a className="box" href="#"><span>Yritys</span></a>
-                        <a className="box" href="#"><span>Kahvila/Ravintola</span></a>
-                        <a className="box" href="#"><span>Huoltamo</span></a>
-                        <a className="box" href="#"><span>Palaute</span></a>
+                        <a className="box" href="Yritys"><span>Yritys</span></a>
+                        <a className="box" href="Kahvila_Ravintola"><span>Kahvila/Ravintola</span></a>
+                        <a className="box" href="Huoltamo"><span>Huoltamo</span></a>
+                        <a className="box" href="Palaute"><span>Palaute</span></a>
                     </div>
                 </section>
             </main>

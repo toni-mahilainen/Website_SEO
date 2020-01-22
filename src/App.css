@@ -17,7 +17,11 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	vertical-align: baseline;
+  vertical-align: baseline;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -55,6 +59,11 @@ table {
 
 .App {
   height: 100vh;
+  background-color: rgb(0, 0, 158);
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
 }
 
 /* --------------------------------APP-------------------------------- */
@@ -67,12 +76,21 @@ header {
   justify-content: center;
 }
 
-header h1 {
+header img {
   align-self: center;
 }
 
-nav {
-  height: 5vh;
+header a {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 3rem;
+  color: white;
+  margin: 1rem;
+}
+
+nav a {
+  color: white;
 }
 
 /* --------------------------------HEADER-------------------------------- */
@@ -134,6 +152,7 @@ nav {
 
 .box span {
   align-self: center;
+  color: white;
 }
 
 @keyframes toBox {
@@ -175,6 +194,10 @@ nav {
   background: transparent;
   border: none;
   outline: none;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 /* --------------------------------YRITYS-------------------------------- */
@@ -196,6 +219,10 @@ nav {
   background: transparent;
   border: none;
   outline: none;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
@@ -217,6 +244,10 @@ nav {
   background: transparent;
   border: none;
   outline: none;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 /* --------------------------------HUOLTAMO-------------------------------- */
@@ -234,7 +265,6 @@ nav {
 /* --------------------------------FOOTER-------------------------------- */
 
 footer {
-  background-color: blanchedalmond;
   position: absolute;
   bottom: 0;
   width: 100%;

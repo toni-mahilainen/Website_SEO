@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
+import logo from '../Images/seologo.png';
+import '@fortawesome/fontawesome-free/css/all.css'
 
 class Header extends Component {
     render() {
         return (
             <header>
-                <h1>SEO Koski</h1>
+                <img src={logo} alt="SEO Logo" width="20%"/>
+                <a href="https://www.facebook.com/koskenseo/" target="blank"><span className="fab fa-facebook"></span></a>
             </header>
         );
     }
