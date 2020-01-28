@@ -100,6 +100,7 @@ header img {
 #logoLink {
   align-self: center;
   width: 20%;
+  box-shadow: 0px 0px 15px 12px rgba(0, 0, 158, 0.8);
 }
 
 nav {
@@ -126,7 +127,7 @@ nav a:hover {
 #mainpage {
   text-align: center;
   overflow: auto;
-  height: 70vh;
+  height: 73vh;
 }
 
 #mainpageUpper, #mainpageLower {
@@ -281,7 +282,17 @@ footer {
 footer section {
   width: 33.34%;
   text-align: center;
-  padding-top: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 0 1.0rem;
+}
+
+.footerHidden {
+  opacity: 0;
+}
+
+#openInfo {
+  border-left:  1px solid white;
+  border-right:  1px solid white;
 }
 
 footer h4 {
@@ -306,6 +317,16 @@ footer address {
   color: rgba(230, 230, 255, 0.8);
 }
 
+.hidden {
+  animation: 1s Hidden;
+  opacity: 0;
+}
+
+.visible {
+  animation: 1s Visible;
+  opacity: 1;
+}
+
 @keyframes heightUp {
   from {
     height: 12vh;
@@ -323,6 +344,26 @@ footer address {
 
   to {
     height: 12vh;
+  }
+}
+
+@keyframes Visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Hidden {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 

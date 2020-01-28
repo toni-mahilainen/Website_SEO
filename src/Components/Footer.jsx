@@ -6,26 +6,30 @@ import { Col } from 'react-bootstrap';
 import MapContainer from './GoogleMap';
 
 class Footer extends Component {
-    constructor() {
-        super();
-        this.handleSiteMapClick = this.handleSiteMapClick.bind(this);
-    }
-
     heightUp() {
         let footer = document.getElementById("footer");
+        let hiddens = document.getElementsByClassName("footerHidden");
+
+        for (let index = 0; index < hiddens.length; index++) {
+            hiddens[index].classList.remove("hidden");
+            hiddens[index].classList.add("visible");
+        }
+        
         footer.classList.remove("smallFooter");
         footer.classList.add("largeFooter");
-
     }
 
     heightDown() {
         let footer = document.getElementById("footer");
+        let hiddens = document.getElementsByClassName("footerHidden");
+        
+        for (let index = 0; index < hiddens.length; index++) {
+            hiddens[index].classList.remove("visible");
+            hiddens[index].classList.add("hidden");
+        }
+        
         footer.classList.remove("largeFooter");
         footer.classList.add("smallFooter");
-    }
-
-    handleSiteMapClick() {
-        this.props.history.push('/Yritys');
     }
 
     render() {
@@ -34,7 +38,7 @@ class Footer extends Component {
                 <div id="footerWrapper">
                     <section id="contactInfo">
                         <h4>Yhteystiedot</h4>
-                        <address>
+                        <address className="footerHidden">
                             Kosken Autohuolto Oy <br />
                             Hämeentie 2  <br />
                             31500, Koski TL <br />
@@ -46,7 +50,7 @@ class Footer extends Component {
                     </section>
                     <section id="openInfo">
                         <h4>Aukioloajat</h4>
-                        <Container bsPrefix="openInfoContainer">
+                        <Container bsPrefix="openInfoContainer footerHidden">
                             <Row>
                                 <Col>
                                     <h5>SEO Koski</h5>
@@ -71,7 +75,9 @@ class Footer extends Component {
                     </section>
                     <section id="googleMap">
                         <h4>Sijainti</h4>
-                        <MapContainer/>
+                        <div className="footerHidden">
+                            <MapContainer />
+                        </div>
                     </section>
                 </div>
             </footer>

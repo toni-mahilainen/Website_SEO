@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import lataus from '../Images/lataus.jpg';
 import lataus1 from '../Images/lataus1.jpg';
 import lataus2 from '../Images/lataus2.jpg';
+import MapContainer from './GoogleMap';
 
 class Etusivu extends Component {
     render() {
