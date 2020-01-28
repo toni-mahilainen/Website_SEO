@@ -1,47 +1,29 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-const MapPoint = ({ text }) => (
-    <div style={{
-        color: 'white',
-        background: 'grey',
-        display: 'inline-flex',
-        textAlign: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '100%',
-    }}>
-        {text}
-    </div>
-);
-
-class SimpleMap extends Component {
-    static defaultProps = {
-        center: { lat: 60.723154, lng: 23.251800 },
-        zoom: 9.5
-    };
-
+export class MapContainer extends Component {
     render() {
         return (
-            <div style={{ height: '100%', width: '300px' }}>
-                <GoogleMapReact
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
-                >
-                    <MapPoint
-                        lat={60.652529}
-                        lng={23.138526}
-                        text={'SEO Koski'}
-                    />
-                    <MapPoint
-                        lat={60.774832}
-                        lng={23.366284}
-                        text={'SEO Palikkala'}
-                    />
-                </GoogleMapReact>
-            </div>
+            <Map google={this.props.google}
+                zoom={14}
+                style={{
+                    position: 'relative',
+                    width: "600px",
+                    height: "200px"
+                  }}
+                center={{
+                    lat: 60.826359,
+                    lng: 23.591212
+                }}>
+                <Marker
+                    title={'The marker`s title will appear as a tooltip.'}
+                    name={'SOMA'}
+                    position={{ lat: 60.818660, lng: 23.600825 }} />
+            </Map>
         );
     }
 }
 
-export default SimpleMap;
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyD_8IHVsxQgOu4rcjxJEBRcCYNnikji3CY"
+})(MapContainer)

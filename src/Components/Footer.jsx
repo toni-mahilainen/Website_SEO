@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { withRouter, NavLink } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import MapContainer from './GoogleMap';
 
 class Footer extends Component {
     constructor() {
@@ -70,7 +70,8 @@ class Footer extends Component {
                         </Container>
                     </section>
                     <section id="googleMap">
-                        <h4>Google Map</h4>
+                        <h4>Sijainti</h4>
+                        <MapContainer/>
                     </section>
                 </div>
             </footer>
@@ -78,4 +79,4 @@ class Footer extends Component {
     }
 }
 
-export default withRouter(Footer);
+export default Footer;
