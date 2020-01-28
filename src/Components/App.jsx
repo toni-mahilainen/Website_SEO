@@ -20,7 +20,7 @@ class App extends Component {
                         <ul className="navbar-nav mr-auto ml-auto">
                             <li><Link to={"/"} className="nav-link">Etusivu</Link></li>
                             <li><Link to={"/Yritys"} className="nav-link">Yritys</Link></li>
-                            <li><Link to={"/Kahvila_Ravintola"} className="nav-link">Kahvila/Ravintola</Link></li>
+                            <li><Link to={"/Kahvila_Ravintola"} className="nav-link">Kahvila / Ravintola</Link></li>
                             <li><Link to={"/Huoltamo"} className="nav-link">Huoltamo</Link></li>
                             <li><Link to={"/Palaute"} className="nav-link">Palaute</Link></li>
                         </ul>

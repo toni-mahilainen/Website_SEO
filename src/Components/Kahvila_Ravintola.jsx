@@ -71,11 +71,11 @@ class KahvilaRavintola extends Component {
         return (
             <main id="coffeeRestaurant">
                 <section id="coffeeRestaurantUpper">
-                    <div className="coffeeRestaurantHeader">
+                    <div className="subHeader">
                         <h1>Kahvila / Ravintola</h1>
                     </div>
                     <div>
-                        <ul id="coffeeRestaurantNav">
+                        <ul className="subNav" id="coffeeRestaurantNav">
                             <li><button id="coffeeBtn" onClick={this.handleNavClick}>Kahvila</button><span>/</span></li>
                             <li><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button><span>/</span></li>
                             <li><button id="restaurantBtn" onClick={this.handleNavClick}>Ravintola</button></li>

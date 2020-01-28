@@ -71,11 +71,11 @@ class Yritys extends Component {
         return (
             <main id="company">
                 <section id="companyUpper">
-                    <div className="companyHeader">
+                    <div className="subHeader">
                         <h1>Yritys</h1>
                     </div>
                     <div>
-                        <ul id="companyNav">
+                        <ul className="subNav" id="companyNav">
                             <li><button id="storyBtn" onClick={this.handleNavClick}>Tarina</button><span>/</span></li>
                             <li><button id="galleryBtn" onClick={this.handleNavClick}>Kuvagalleria</button><span>/</span></li>
                             <li><button id="staffBtn" onClick={this.handleNavClick}>Henkilökunta</button></li>

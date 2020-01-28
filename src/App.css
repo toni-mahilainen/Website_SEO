@@ -22,6 +22,7 @@ time, mark, audio, video {
   letter-spacing: 2px;
   font-weight: bold;
   color: white;
+  overflow: hidden;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -59,38 +60,63 @@ table {
 
 .App {
   height: 100vh;
-  background-color: rgb(0, 0, 158);
   font-family: sans-serif;
   letter-spacing: 2px;
   font-weight: bold;
   color: white;
+  background-image: url(../src/Images/back.jpg);
+  background-size: cover;
 }
 
 /* --------------------------------APP-------------------------------- */
 
 /* --------------------------------HEADER-------------------------------- */
 
-header {
+#mainHeader {
   height: 10vh;
   display: flex;
   justify-content: center;
+  background-color: rgba(0, 0, 158, 0.8);
 }
 
 header img {
-  align-self: center;
+  box-shadow: 0px 0px 15px 12px rgba(0, 0, 158, 0.8);
 }
 
-header a {
+#facebook {
   position: fixed;
   top: 0;
   right: 0;
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
-  margin: 1rem;
+  margin: 1.5rem;
+}
+
+.fab:hover {
+  animation: 0.5s colorChange;
+  color: rgba(100, 100, 245, 0.8);
+}
+
+#logoLink {
+  align-self: center;
+  width: 20%;
+}
+
+nav {
+  height: 5vh;
+  background-color: rgba(0, 0, 158, 0.8);
+  border-radius: 50% 50% 25% 25% / 0% 0% 25% 25%;
 }
 
 nav a {
   color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+nav a:hover {
+  animation: 0.5s colorChange;
+  color: rgba(100, 100, 245, 0.8);
 }
 
 /* --------------------------------HEADER-------------------------------- */
@@ -183,21 +209,7 @@ nav a {
   text-align: center;
   overflow: auto;
   height: 75vh;
-}
-
-#companyNav {
-  display: flex;
-  justify-content: center;
-}
-
-#companyNav button {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  font-family: sans-serif;
-  letter-spacing: 2px;
-  font-weight: bold;
+  
 }
 
 /* --------------------------------YRITYS-------------------------------- */
@@ -210,21 +222,6 @@ nav a {
   height: 75vh;
 }
 
-#coffeeRestaurantNav {
-  display: flex;
-  justify-content: center;
-}
-
-#coffeeRestaurantNav button {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  font-family: sans-serif;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
 
 /* --------------------------------HUOLTAMO-------------------------------- */
@@ -235,29 +232,20 @@ nav a {
   height: 75vh;
 }
 
-#serviceNav {
-  display: flex;
-  justify-content: center;
-}
 
-#serviceNav button {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  font-family: sans-serif;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
 
 /* --------------------------------HUOLTAMO-------------------------------- */
 
 /* --------------------------------PALAUTE-------------------------------- */
 
-#palaute {
+#contact {
   text-align: center;
   overflow: auto;
   height: 75vh;
+}
+
+#contactLower {
+  margin: 20px auto;
 }
 
 /* --------------------------------PALAUTE-------------------------------- */
@@ -268,13 +256,74 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 15vh;
-  display: flex;
-  justify-content: center;
+  height: 12vh;
+  background-color: rgba(0, 0, 158, 0.8);
+  border-radius: 50% 50% 0% 0% / 25% 25% 0% 0%;
 }
 
-footer h1 {
-  align-self: center;
+#footerWrapper {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.largeFooter {
+  animation: 1s heightUp;
+  height: 30vh;
+}
+
+.smallFooter {
+  animation: 1s heightDown;
+  height: 12vh;
+}
+
+footer section {
+  width: 33.34%;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+footer h4 {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+footer address {
+  width: 100%;
+  line-height: 1.7rem;
+}
+
+.openInfoContainer li {
+  line-height: 1.6rem;
+}
+
+.openInfoContainer h5 {
+  padding-bottom: 1rem;
+}
+
+.listDays {
+  color: rgba(230, 230, 255, 0.8);
+}
+
+@keyframes heightUp {
+  from {
+    height: 12vh;
+  }
+
+  to {
+    height: 30vh;
+  }
+}
+
+@keyframes heightDown {
+  from {
+    height: 30vh;
+  }
+
+  to {
+    height: 12vh;
+  }
 }
 
 /* --------------------------------FOOTER-------------------------------- */
@@ -284,6 +333,49 @@ footer h1 {
 #root {
   position: relative;
   max-height: 100vh;
+}
+
+.subHeader {
+  margin: auto;
+  padding: 0 0 10px 0;
+  width: 50%;
+  background-color: rgba(0, 0, 158, 0.8);
+  border-radius: 50% 50% 40% 40% / 0% 0% 100% 100%;
+}
+
+.subNav {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  width: 30%;
+  background-color: rgba(0, 0, 158, 0.5);
+  border-radius: 100px;
+}
+
+.subNav button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.subNav button:hover {
+  animation: 0.5s colorChange;
+  color: rgba(100, 100, 245, 0.8);;
+}
+
+@keyframes colorChange {
+  from {
+    color: white;
+  }
+
+  to {
+    color: rgba(100, 100, 245, 0.8);
+  }
 }
 
 /* --------------------------------YLEISET-------------------------------- */

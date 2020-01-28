@@ -70,11 +70,11 @@ class Huoltamo extends Component {
         return (
             <main id="service">
                 <section id="serviceUpper">
-                    <div className="serviceHeader">
+                    <div className="subHeader">
                         <h1>Huoltamo</h1>
                     </div>
                     <div>
-                        <ul id="serviceNav">
+                        <ul className="subNav" id="serviceNav">
                             <li><button id="serviceBtn" onClick={this.handleNavClick}>Huoltopalvelut</button><span>/</span></li>
                             <li><button id="sparePartsBtn" onClick={this.handleNavClick}>Varaosat</button><span>/</span></li>
                             <li><button id="carWashBtn" onClick={this.handleNavClick}>Autopesu</button></li>
