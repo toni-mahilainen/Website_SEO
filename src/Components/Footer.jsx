@@ -3,7 +3,16 @@ import '../App.css';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-import MapContainer from './GoogleMap';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+
+const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+    <GoogleMap
+        defaultZoom={8}
+        defaultCenter={{ lat: 60.826359, lng: 23.591212 }}
+    >
+        {props.isMarkerShown && <Marker position={{ lat: 60.818660, lng: 23.600825 }} />}
+    </GoogleMap>
+))
 
 class Footer extends Component {
     heightUp() {
@@ -14,7 +23,7 @@ class Footer extends Component {
             hiddens[index].classList.remove("hidden");
             hiddens[index].classList.add("visible");
         }
-        
+
         footer.classList.remove("smallFooter");
         footer.classList.add("largeFooter");
     }
@@ -22,12 +31,12 @@ class Footer extends Component {
     heightDown() {
         let footer = document.getElementById("footer");
         let hiddens = document.getElementsByClassName("footerHidden");
-        
+
         for (let index = 0; index < hiddens.length; index++) {
             hiddens[index].classList.remove("visible");
             hiddens[index].classList.add("hidden");
         }
-        
+
         footer.classList.remove("largeFooter");
         footer.classList.add("smallFooter");
     }
@@ -56,18 +65,18 @@ class Footer extends Component {
                                     <h5>SEO Koski</h5>
                                     <ul>
                                         <li>Maanantai - Perjantai</li>
-                                        <li className="listDays">06.00 - 19.00</li>
+                                        <li className="listTimes">06.00 - 19.00</li>
                                         <li>Lauantai</li>
-                                        <li className="listDays">08.00 - 16.00</li>
+                                        <li className="listTimes">08.00 - 16.00</li>
                                         <li>Sunnuntai</li>
-                                        <li className="listDays">09.00 - 16.00</li>
+                                        <li className="listTimes">09.00 - 16.00</li>
                                     </ul>
                                 </Col>
                                 <Col>
                                     <h5>SEO Palikkala</h5>
                                     <ul>
                                         <li>Maanantai - Perjantai</li>
-                                        <li className="listDays">07.30 - 16.00</li>
+                                        <li className="listTimes">07.30 - 16.00</li>
                                     </ul>
                                 </Col>
                             </Row>
@@ -75,8 +84,14 @@ class Footer extends Component {
                     </section>
                     <section id="googleMap">
                         <h4>Sijainti</h4>
-                        <div className="footerHidden">
-                            <MapContainer />
+                        <div className="footerHidden" id="mapDiv">
+                            <MyMapComponent
+                                isMarkerShown
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8IHVsxQgOu4rcjxJEBRcCYNnikji3CY&v=3.exp&libraries=geometry,drawing,places"
+                                containerElement={<div style={{ height: '20vh', width: '100%' }} />}
+                                mapElement={<div style={{ height: '100%', width: '100%' }} />}
+                                loadingElement={<div style={{ height: '100%', width: '100%' }} />}
+                            />
                         </div>
                     </section>
                 </div>

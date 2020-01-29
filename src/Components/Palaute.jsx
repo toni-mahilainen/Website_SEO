@@ -12,15 +12,19 @@ class Palaute extends Component {
                 </section>
                 <section id="contactLower">
                     <form>
-                        Nimi<br />
-                        <input type="text" /><br />
-                        Sähköposti<br />
-                        <input type="text" /><br />
-                        Aihe<br />
-                        <input type="text" /><br />
-                        Viesti<br />
-                        <textarea cols="40" rows="10"></textarea><br />
-                        <button type="submit">Lähetä</button>
+                        <div id="formLeft">
+                            Nimi<br />
+                            <input type="text" /><br />
+                            Sähköposti<br />
+                            <input type="text" /><br />
+                            Aihe<br />
+                            <input type="text" /><br />
+                            <button type="submit">Lähetä</button>
+                        </div>
+                        <div id="formRight">
+                            Viesti<br />
+                            <textarea></textarea><br />
+                        </div>
                     </form>
                 </section>
             </main>

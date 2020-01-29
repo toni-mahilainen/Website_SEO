@@ -21,7 +21,7 @@ class Kuvagalleria extends Component {
     }
 }
 
-class Henkilökunta extends Component {
+class Henkilokunta extends Component {
     render() {
         return (
             <header>
@@ -85,7 +85,7 @@ class Yritys extends Component {
                 <section id="companyLower">
                     {this.state.StoryVisible ? <Tarina exampleRequest={this.state.ExampleRequestState} /> : null}
                     {this.state.GalleryVisible ? <Kuvagalleria exampleRequest={this.state.ExampleRequestState} /> : null}
-                    {this.state.StaffVisible ? <Henkilökunta exampleRequest={this.state.ExampleRequestState} /> : null}
+                    {this.state.StaffVisible ? <Henkilokunta exampleRequest={this.state.ExampleRequestState} /> : null}
                 </section>
             </main>
         );
