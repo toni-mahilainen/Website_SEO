@@ -49,10 +49,10 @@ class Palaute extends Component {
         ).then((response) => {
             if (response.status >= 200 && response.status < 300) {
                 // alertin tilalle viesti käyttäjällä käyttöliittymään
-                alert("Email sent, awesome!");
+                alert("Palaute lähetetty!");
                 this.clearInputs();
             } else {
-                alert("Oops, something went wrong. Try again")
+                alert("Jokin meni pieleen. Ole hyvä ja yritä uudelleen.")
             }
         })
     }

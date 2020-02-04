@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import logo from '../Images/seologo.png';
+import logo from '../Images/seologo-3.png';
 import '@fortawesome/fontawesome-free/css/all.css'
 
 class Header extends Component {

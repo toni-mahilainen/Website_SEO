@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
+import axios from 'axios';
 
 class Kahvila extends Component {
     render() {
         return (
-            <header>
+            <div className="sectionHeader">
                 <h1>Kahvila</h1>
-            </header>
+            </div>
         );
     }
 }
@@ -14,9 +15,14 @@ class Kahvila extends Component {
 class Lounas extends Component {
     render() {
         return (
-            <header>
-                <h1>Lounas</h1>
-            </header>
+            <div>
+                <div className="sectionHeader">
+                    <h1>Lounas</h1>
+                </div>
+                <div id="lunchMain">
+                    <p>{this.props.lunchListProp}</p>
+                </div>
+            </div>
         );
     }
 }
@@ -24,9 +30,9 @@ class Lounas extends Component {
 class Ravintola extends Component {
     render() {
         return (
-            <header>
+            <div className="sectionHeader">
                 <h1>Ravintola</h1>
-            </header>
+            </div>
         );
     }
 }
@@ -37,9 +43,38 @@ class KahvilaRavintola extends Component {
         this.state = {
             CoffeeVisible: true,
             LunchVisible: false,
-            RestaurantVisible: false
+            RestaurantVisible: false,
+            LunchList: ""
         };
         this.handleNavClick = this.handleNavClick.bind(this);
+    }
+
+    getFacebookFeed() {
+        axios.get('https://graph.facebook.com/2694359763989377/feed',
+            {
+                params: {
+                    access_token: "EAAI41FdBRxwBAOcHCg2ZB07lXBckHHQC2rWD2G5sucrWFJigyGT8N9P7DtW3pK0PhYxllZAkzX3gicUTvD7ZCEZCUzZBf0KOZBfc2HC4c6RaFx70E7UtZABtNoJPGzMDDO8ZCBlS1JzHQuWXKICQxxvZCyHS92a7cbBBmdcnQXI0aD6lB8LwrbZBnjwZCxgKD7Buy0ZD"
+                }
+            })
+            .then(response => {
+                let data = response.data.data;
+
+                for (let index = 0; index < data.length; index++) {
+                    let message = data[index].message;
+                    if (message) {
+                        let rightMessage = message.startsWith("#koskenseolounas");
+                        if (rightMessage) {
+                            this.setState({
+                                LunchList: message
+                            });
+                        }
+                    }
+                }
+            })
+    }
+
+    componentDidMount() {
+        this.getFacebookFeed();
     }
 
     handleNavClick(btn) {
@@ -66,7 +101,7 @@ class KahvilaRavintola extends Component {
             alert("Tapahtui virhe! Ole hyvä ja lataa sivu uudelleen.");
         }
     }
-    
+
     render() {
         return (
             <main id="coffeeRestaurant">
@@ -84,7 +119,7 @@ class KahvilaRavintola extends Component {
                 </section>
                 <section id="coffeeRestaurantLower">
                     {this.state.CoffeeVisible ? <Kahvila exampleRequest={this.state.ExampleRequestState} /> : null}
-                    {this.state.LunchVisible ? <Lounas exampleRequest={this.state.ExampleRequestState} /> : null}
+                    {this.state.LunchVisible ? <Lounas exampleRequest={this.state.ExampleRequestState} lunchListProp={this.state.LunchList} /> : null}
                     {this.state.RestaurantVisible ? <Ravintola exampleRequest={this.state.ExampleRequestState} /> : null}
                 </section>
             </main>
