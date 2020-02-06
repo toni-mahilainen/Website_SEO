@@ -4,15 +4,22 @@ import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { compose, withProps } from "recompose";
 
-const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-    <GoogleMap
-        defaultZoom={8}
-        defaultCenter={{ lat: 60.826359, lng: 23.591212 }}
-    >
-        {props.isMarkerShown && <Marker position={{ lat: 60.818660, lng: 23.600825 }} />}
+const MyMapComponent = compose(
+    withProps({
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAkQlXC7Oir283E-a9tPqz45Gc6KEjj5Lw&v=3.exp&libraries=geometry,drawing,places",
+        loadingElement: <div style={{ height: '200px', width: '400px' }} />,
+        containerElement: <div style={{ height: '200px', width: '400px' }} />,
+        mapElement: <div style={{ height: '200px', width: '400px' }} />
+    }),
+    withScriptjs,
+    withGoogleMap
+)(props => (
+    <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }} >
+        <Marker position={{ lat: -34.397, lng: 150.644 }} />
     </GoogleMap>
-))
+));
 
 class Footer extends Component {
     heightUp() {
@@ -84,14 +91,8 @@ class Footer extends Component {
                     </section>
                     <section id="googleMap">
                         <h4>Sijainti</h4>
-                        <div className="footerHidden" id="mapDiv">
-                            <MyMapComponent
-                                isMarkerShown
-                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8IHVsxQgOu4rcjxJEBRcCYNnikji3CY&v=3.exp&libraries=geometry,drawing,places"
-                                containerElement={<div style={{ height: '20vh', width: '100%' }} />}
-                                mapElement={<div style={{ height: '100%', width: '100%' }} />}
-                                loadingElement={<div style={{ height: '100%', width: '100%' }} />}
-                            />
+                        <div className="footerHidden" id="footerMap">
+                            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1apQ8Ch6OQ0LNuxhRXjcUYb8NiMZplyak"></iframe>
                         </div>
                     </section>
                 </div>

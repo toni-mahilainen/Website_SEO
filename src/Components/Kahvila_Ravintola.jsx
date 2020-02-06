@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 class Kahvila extends Component {
     render() {
@@ -19,9 +19,11 @@ class Lounas extends Component {
                 <div className="sectionHeader">
                     <h1>Lounas</h1>
                 </div>
-                <div id="lunchMain">
-                    <p>{this.props.lunchListProp}</p>
-                </div>
+                {
+                    // <div id="lunchMain">
+                    //     <p>{this.props.lunchListProp}</p>
+                    // </div>
+                }
             </div>
         );
     }
@@ -43,39 +45,40 @@ class KahvilaRavintola extends Component {
         this.state = {
             CoffeeVisible: true,
             LunchVisible: false,
-            RestaurantVisible: false,
-            LunchList: ""
+            RestaurantVisible: false
+            // LunchList: ""
         };
         this.handleNavClick = this.handleNavClick.bind(this);
     }
 
-    getFacebookFeed() {
-        axios.get('https://graph.facebook.com/2694359763989377/feed',
-            {
-                params: {
-                    access_token: "EAAI41FdBRxwBAOcHCg2ZB07lXBckHHQC2rWD2G5sucrWFJigyGT8N9P7DtW3pK0PhYxllZAkzX3gicUTvD7ZCEZCUzZBf0KOZBfc2HC4c6RaFx70E7UtZABtNoJPGzMDDO8ZCBlS1JzHQuWXKICQxxvZCyHS92a7cbBBmdcnQXI0aD6lB8LwrbZBnjwZCxgKD7Buy0ZD"
-                }
-            })
-            .then(response => {
-                let data = response.data.data;
+    // getFacebookFeed() {
+    //     axios.get('https://graph.facebook.com/277905558897434/posts?',
+    //         {
+    //             params: {
+    //                 access_token: "625434601539356|80a12dc951b0ddd6e8ed462f8c673ee8"
+    //                 // access_token: "EAAI41FdBRxwBAP8vVZCTi2ZB6cYGRVOIcvvoo9MHzMLXnIm3vxGtkqDZBhEbSZBaXhe4BYuzHRp5SVrpZCeYvuz0l9SnGuWueevL7ShSkMLrrDNkgPbsOM5kfGaU4l0OrYvPnVqWqHvyvYLO10rQ3u1UQfV5umJU6pKTaNqLlUgZDZD"
+    //             }
+    //         })
+    //         .then(response => {
+    //             let data = response.data.data;
 
-                for (let index = 0; index < data.length; index++) {
-                    let message = data[index].message;
-                    if (message) {
-                        let rightMessage = message.startsWith("#koskenseolounas");
-                        if (rightMessage) {
-                            this.setState({
-                                LunchList: message
-                            });
-                        }
-                    }
-                }
-            })
-    }
+    //             for (let index = 0; index < data.length; index++) {
+    //                 let message = data[index].message;
+    //                 if (message) {
+    //                     let rightMessage = message.startsWith("Leipurityttö");
+    //                     if (rightMessage) {
+    //                         this.setState({
+    //                             LunchList: message
+    //                         });
+    //                     }
+    //                 }
+    //             }
+    //         })
+    // }
 
-    componentDidMount() {
-        this.getFacebookFeed();
-    }
+    // componentDidMount() {
+    //     this.getFacebookFeed();
+    // }
 
     handleNavClick(btn) {
         let btnId = btn.target.id;
@@ -119,7 +122,7 @@ class KahvilaRavintola extends Component {
                 </section>
                 <section id="coffeeRestaurantLower">
                     {this.state.CoffeeVisible ? <Kahvila exampleRequest={this.state.ExampleRequestState} /> : null}
-                    {this.state.LunchVisible ? <Lounas exampleRequest={this.state.ExampleRequestState} lunchListProp={this.state.LunchList} /> : null}
+                    {this.state.LunchVisible ? <Lounas exampleRequest={this.state.ExampleRequestState} /* lunchListProp={this.state.LunchList} */ /> : null}
                     {this.state.RestaurantVisible ? <Ravintola exampleRequest={this.state.ExampleRequestState} /> : null}
                 </section>
             </main>
