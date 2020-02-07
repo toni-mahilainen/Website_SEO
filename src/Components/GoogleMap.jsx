@@ -6,7 +6,7 @@ import ReactGoogleMapLoader from "react-google-maps-loader";
 
 import "../App.css"
 
-const MY_API_KEY = "AIzaSyAkQlXC7Oir283E-a9tPqz45Gc6KEjj5Lw" // fake
+const MY_API_KEY = "API-KEY" // fake
 
 const Map = () =>
     // GoogleMap component has a 100% height style.
