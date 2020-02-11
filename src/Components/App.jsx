@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Yritys from './Yritys';
 import KahvilaRavintola from './Kahvila_Ravintola';
 import Huoltamo from './Huoltamo';
+import Palikkala from './Palikkala';
 import Palaute from './Palaute';
 // import ReactGoogleMapLoader from "react-google-maps-loader";
 // import ReactGoogleMap from "react-google-map"
@@ -87,6 +88,7 @@ class App extends Component {
                             <li><Link to={"/Yritys"} className="nav-link">Yritys</Link></li>
                             <li><Link to={"/Kahvila_Ravintola"} className="nav-link">Kahvila / Ravintola</Link></li>
                             <li><Link to={"/Huoltamo"} className="nav-link">Huoltamo</Link></li>
+                            <li><Link to={"/Palikkala"} className="nav-link">SEO Palikkala</Link></li>
                             <li><Link to={"/Palaute"} className="nav-link">Palaute</Link></li>
                         </ul>
                     </nav>
@@ -95,6 +97,7 @@ class App extends Component {
                         <Route path="/Yritys" component={Yritys} />
                         <Route path="/Kahvila_Ravintola" component={KahvilaRavintola} />
                         <Route path="/Huoltamo" component={Huoltamo} />
+                        <Route path="/Palikkala" component={Palikkala} />
                         <Route path="/Palaute" component={Palaute} />
                     </Switch>
                 </Router>

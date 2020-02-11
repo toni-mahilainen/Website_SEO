@@ -6,7 +6,7 @@ class Etusivu extends Component {
         return (
             <main id="mainpage">
                 <section id="mainpageUpper">
-                    <div className="mainpageHeader subNav">
+                    <div className="mainpageHeader">
                         <h1>Tervetuloa SEO Kosken kotisivuille</h1>
                     </div>
                 </section>

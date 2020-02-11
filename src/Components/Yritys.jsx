@@ -1,72 +1,8 @@
 import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import '../App.css';
 
-class Tarina extends Component {
-    render() {
-        return (
-            <header>
-                <h1>Tarina</h1>
-            </header>
-        );
-    }
-}
-
-class Kuvagalleria extends Component {
-    render() {
-        return (
-            <header>
-                <h1>Kuvagalleria</h1>
-            </header>
-        );
-    }
-}
-
-class Henkilokunta extends Component {
-    render() {
-        return (
-            <header>
-                <h1>Henkilökunta</h1>
-            </header>
-        );
-    }
-}
-
 class Yritys extends Component {
-    constructor() {
-        super();
-        this.state = {
-            StoryVisible: true,
-            GalleryVisible: false,
-            StaffVisible: false
-        };
-        this.handleNavClick = this.handleNavClick.bind(this);
-    }
-
-    handleNavClick(btn) {
-        let btnId = btn.target.id;
-        if (btnId === "storyBtn") {
-            this.setState({
-                StoryVisible: true,
-                GalleryVisible: false,
-                StaffVisible: false
-            });
-        } else if (btnId === "galleryBtn") {
-            this.setState({
-                StoryVisible: false,
-                GalleryVisible: true,
-                StaffVisible: false
-            });
-        } else if (btnId === "staffBtn") {
-            this.setState({
-                StoryVisible: false,
-                GalleryVisible: false,
-                StaffVisible: true
-            });
-        } else {
-            alert("Tapahtui virhe! Ole hyvä ja lataa sivu uudelleen.");
-        }
-    }
-
     render() {
         return (
             <main id="company">
@@ -74,18 +10,32 @@ class Yritys extends Component {
                     <div className="subHeader">
                         <h1>Yritys</h1>
                     </div>
-                    <div>
-                        <ul className="subNav" id="companyNav">
-                            <li><button id="storyBtn" onClick={this.handleNavClick}>Tarina</button><span>/</span></li>
-                            <li><button id="galleryBtn" onClick={this.handleNavClick}>Kuvagalleria</button><span>/</span></li>
-                            <li><button id="staffBtn" onClick={this.handleNavClick}>Henkilökunta</button></li>
-                        </ul>
-                    </div>
                 </section>
                 <section id="companyLower">
-                    {this.state.StoryVisible ? <Tarina exampleRequest={this.state.ExampleRequestState} /> : null}
-                    {this.state.GalleryVisible ? <Kuvagalleria exampleRequest={this.state.ExampleRequestState} /> : null}
-                    {this.state.StaffVisible ? <Henkilokunta exampleRequest={this.state.ExampleRequestState} /> : null}
+                    <Container bsPrefix="storyContainer">
+                        <Row>
+                            <h2>Meidän tarina</h2>
+                        </Row>
+                        <Row>
+                            <p>
+                                Asemiemme tarkoituksena on tarjota perinteistä sekä kokonaisvaltaista huoltoasemapalvelua alueen asukkaille sekä, satunnaiskävijöille.<br/><br/>
+
+                                Kosken Autohuolto Oy on vuonna 1995 perustettu perheyritys. Pekka Kanasuo ja Kai Lepistö ostivat huoltoaseman Kosken keskustasta. 
+                                Huoltamotoiminnan lisäksi kysyntää oli myös kahvilalle, joten pian alkoi myös kahvion suunnittelu ja rakennus. Laajennuksen valmistuttua kahvion ovet avattiin vuonna 1998. 
+                                Samalla yritys sai uuden yrittäjän Aila Lepistön. Myöhemmin toimintaa laajennettiin vielä rakentamalla autojen pikapesula. 
+                                Kosken Autohuolto Oy eli tuttavallisemmin Kosken SEO työllistää tällä hetkellä, yrittäjien itsensä lisäksi, kuusi vakituista ja useamman osa-aikaisen työntekijän.<br/><br/>
+
+                                Kosken SEO ja nykyisin myös Palikkakan SEO sijaitsevat ihanteellisilla paikoilla Kosken asukkaiden sekä ohikulkevien asiakkaiden kannalta. Asemamme tarjoavat asiakkailleen suuren valikoiman erilaisia tuotteita ja palveluja arjen tarpeisiin. 
+                                Olemme kilpailukykyisiä suurten liikenneasemien rinnalla, erityisesti asiantunteva ja avulias henkilökunta sekä hyvä palvelu yhdistettynä perinteiseen huoltoasematunnelmaan ovat vahvuuksiamme. 
+                                Laadukkaan huoltamotoiminnan lisäksi kahvioistamme saa joka päivä tuoreita leivonnaisia, joita on myös mahdollista tilata erilaisiin tilaisuuksiin. Keittiöissämme teemme päivittäin runsaan valikoiman erilaisia ruokia, pieneen tai suureen nälkään. 
+                                Arkisin tarjolla on tottakai myös perinteistä kotiruokaa noutopöytälounaan muodossa.<br/><br/>
+                                
+                                Ystävällisin terveisin,<br/><br/>
+                                
+                                Aila, Pekka, Kai
+                            </p>
+                        </Row>
+                    </Container>
                 </section>
             </main>
         );

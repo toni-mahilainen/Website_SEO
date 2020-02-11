@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import { Container, Row } from 'react-bootstrap';
 
 class Palaute extends Component {
     constructor() {
@@ -103,21 +104,34 @@ class Palaute extends Component {
                     </div>
                 </section>
                 <section id="contactLower">
-                    <form onSubmit={this.handleSubmit}>
-                        <div id="formLeft">
-                            Nimi<br />
-                            <input type="text" className="contactInput" id="name" onChange={this.handleChangeInput}/><br />
-                            Sähköposti<br />
-                            <input type="text" className="contactInput" id="email" onChange={this.handleChangeInput}/><br />
-                            Aihe<br />
-                            <input type="text" className="contactInput" id="subject" onChange={this.handleChangeInput}/><br />
-                            <button type="submit">Lähetä</button>
-                        </div>
-                        <div id="formRight">
-                            Viesti<br />
-                            <textarea type="text" className="contactInput" id="message" onChange={this.handleChangeInput}></textarea><br />
-                        </div>
-                    </form>
+                    <Container bsPrefix="contactContainer">
+                        <Row id="textRow">
+                            <p>
+                                Kerro meille mielipiteesi tai kysy! <br/><br/>
+
+                                Pyrimme kehittämään jatkuvasti toimintaamme ja sen vuoksi on erittäin tärkeää, että saamme palautetta toimintamme kehittämisen tueksi.<br/><br/>
+                                
+                                Kaikenlainen palaute on tervetullutta!
+                            </p>
+                        </Row>
+                        <Row id="formRow">
+                            <form onSubmit={this.handleSubmit}>
+                                <div id="formLeft">
+                                    Nimi<br />
+                                    <input type="text" className="contactInput" id="name" onChange={this.handleChangeInput} /><br />
+                                    Sähköposti<br />
+                                    <input type="text" className="contactInput" id="email" onChange={this.handleChangeInput} /><br />
+                                    Aihe<br />
+                                    <input type="text" className="contactInput" id="subject" onChange={this.handleChangeInput} /><br />
+                                    <button type="submit">Lähetä</button>
+                                </div>
+                                <div id="formRight">
+                                    Viesti<br />
+                                    <textarea type="text" className="contactInput" id="message" onChange={this.handleChangeInput}></textarea><br />
+                                </div>
+                            </form>
+                        </Row>
+                    </Container>
                 </section>
             </main>
         );
