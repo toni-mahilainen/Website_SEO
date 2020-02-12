@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 class Kahvila extends Component {
     render() {
@@ -20,9 +20,9 @@ class Lounas extends Component {
                     <h1>Lounas</h1>
                 </div>
                 {
-                    // <div id="lunchMain">
-                    //     <p>{this.props.lunchListProp}</p>
-                    // </div>
+                    <div id="lunchMain">
+                        <p>{this.props.lunchListProp}</p>
+                    </div>
                 }
             </div>
         );
@@ -45,40 +45,49 @@ class KahvilaRavintola extends Component {
         this.state = {
             CoffeeVisible: true,
             LunchVisible: false,
-            RestaurantVisible: false
-            // LunchList: ""
+            RestaurantVisible: false,
+            LunchList: ""
         };
         this.handleNavClick = this.handleNavClick.bind(this);
     }
 
-    // getFacebookFeed() {
-    //     axios.get('https://graph.facebook.com/277905558897434/posts?',
-    //         {
-    //             params: {
-    //                 access_token: "625434601539356|80a12dc951b0ddd6e8ed462f8c673ee8"
-    //                 // access_token: "EAAI41FdBRxwBAP8vVZCTi2ZB6cYGRVOIcvvoo9MHzMLXnIm3vxGtkqDZBhEbSZBaXhe4BYuzHRp5SVrpZCeYvuz0l9SnGuWueevL7ShSkMLrrDNkgPbsOM5kfGaU4l0OrYvPnVqWqHvyvYLO10rQ3u1UQfV5umJU6pKTaNqLlUgZDZD"
-    //             }
-    //         })
-    //         .then(response => {
-    //             let data = response.data.data;
+    getFacebookFeed() {
+        // lähetetään GET -pyyntö facebookin Graph APIin
+        // Parametreina page ID, posts (jotta saadaan vastauksena julkiset julkaisut) sekä Access Token, joka varmistaa tunnistautumisen
+        axios.get('https://graph.facebook.com/106628357569438/posts?',
+            {
+                params: {
+                    // access_token: "625434601539356|80a12dc951b0ddd6e8ed462f8c673ee8"
+                    access_token: "EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
+                }
+            })
+            .then(response => {
+                // Vastaus palvelimelta JSON-muodossa, josta sijoitetaan julkaisut muuttujaan
+                let lunchListArray = "";
+                let data = response.data.data;
 
-    //             for (let index = 0; index < data.length; index++) {
-    //                 let message = data[index].message;
-    //                 if (message) {
-    //                     let rightMessage = message.startsWith("Leipurityttö");
-    //                     if (rightMessage) {
-    //                         this.setState({
-    //                             LunchList: message
-    //                         });
-    //                     }
-    //                 }
-    //             }
-    //         })
-    // }
+                for (let index = 0; index < data.length; index++) {
+                    // Käydään kaikki julkaisut läpi silmukassa
+                    let message = data[index].message;
+                    if (message) {
+                        // Jos julkaisussa on tekstiä ja jos se alkaa sanalla LOUNAS (rightMessage = true/false), sijoitetaan se tila muuttujaan
+                        let rightMessage = message.startsWith("LOUNAS");
+                        if (rightMessage) {
+                            // Pilkotaan merkkijono sopivalla tavalla osiin myöhempää käsittelyä varten
+                            lunchListArray = message.split("| ");
+                            this.setState({
+                                LunchList: message
+                            });
+                        }
+                    }
+                }
+                console.log(lunchListArray);
+            })
+    }
 
-    // componentDidMount() {
-    //     this.getFacebookFeed();
-    // }
+    componentDidMount() {
+        this.getFacebookFeed();
+    }
 
     handleNavClick(btn) {
         let btnId = btn.target.id;
@@ -122,7 +131,7 @@ class KahvilaRavintola extends Component {
                 </section>
                 <section id="coffeeRestaurantLower">
                     {this.state.CoffeeVisible ? <Kahvila exampleRequest={this.state.ExampleRequestState} /> : null}
-                    {this.state.LunchVisible ? <Lounas exampleRequest={this.state.ExampleRequestState} /* lunchListProp={this.state.LunchList} */ /> : null}
+                    {this.state.LunchVisible ? <Lounas exampleRequest={this.state.ExampleRequestState} lunchListProp={this.state.LunchList} /> : null}
                     {this.state.RestaurantVisible ? <Ravintola exampleRequest={this.state.ExampleRequestState} /> : null}
                 </section>
             </main>
