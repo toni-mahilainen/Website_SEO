@@ -5,7 +5,7 @@ import axios from 'axios';
 class Kahvila extends Component {
     render() {
         return (
-            <div className="sectionHeader">
+            <div className="lowerSubHeader">
                 <h1>Kahvila</h1>
             </div>
         );
@@ -14,16 +14,39 @@ class Kahvila extends Component {
 
 class Lounas extends Component {
     render() {
+        // Pilkotaan merkkijono sopivalla tavalla osiin myöhempää käsittelyä varten
+        let lunchListArray = this.props.lunchListProp.split("| ");
         return (
             <div>
-                <div className="sectionHeader">
-                    <h1>Lounas</h1>
+                <div id="lunchMain">
+                    <table id="tblLunchList">
+                        <thead>
+                            <tr>
+                                <th>{lunchListArray[0]}</th>
+                            </tr>
+                            <tr>
+                                <th>{lunchListArray[1]}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{lunchListArray[2]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[3]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[4]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[5]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[6]}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                {
-                    <div id="lunchMain">
-                        <p>{this.props.lunchListProp}</p>
-                    </div>
-                }
             </div>
         );
     }
@@ -32,7 +55,7 @@ class Lounas extends Component {
 class Ravintola extends Component {
     render() {
         return (
-            <div className="sectionHeader">
+            <div className="lowerSubHeader">
                 <h1>Ravintola</h1>
             </div>
         );
@@ -54,16 +77,16 @@ class KahvilaRavintola extends Component {
     getFacebookFeed() {
         // lähetetään GET -pyyntö facebookin Graph APIin
         // Parametreina page ID, posts (jotta saadaan vastauksena julkiset julkaisut) sekä Access Token, joka varmistaa tunnistautumisen
-        axios.get('https://graph.facebook.com/106628357569438/posts?',
+        axios.get('https://graph.facebook.com/106628357569438/posts?', /* OMA */
+        // axios.get('https://graph.facebook.com/792968771068499/posts?', /* SEO */
             {
                 params: {
-                    // access_token: "625434601539356|80a12dc951b0ddd6e8ed462f8c673ee8"
-                    access_token: "EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
+                    /* OMA */ access_token: "EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
+                    // /* SEO */ access_token: "EAAI41FdBRxwBALZBOCuPTc60e8YyJEjrSy97nRvXZBzTq6BXfIKadEgYF6tBnPHCMSokeH6w8yOsQJZALB49pYn8i8MiguOYhDaZBflivfKwiZCHXaMUY2Rq9eLFLQTALZAudyaZBbaNRwZAWUDvAyh0oW51OZAndEsFjeTFUZCfokCgZDZD"
                 }
             })
             .then(response => {
                 // Vastaus palvelimelta JSON-muodossa, josta sijoitetaan julkaisut muuttujaan
-                let lunchListArray = "";
                 let data = response.data.data;
 
                 for (let index = 0; index < data.length; index++) {
@@ -73,15 +96,12 @@ class KahvilaRavintola extends Component {
                         // Jos julkaisussa on tekstiä ja jos se alkaa sanalla LOUNAS (rightMessage = true/false), sijoitetaan se tila muuttujaan
                         let rightMessage = message.startsWith("LOUNAS");
                         if (rightMessage) {
-                            // Pilkotaan merkkijono sopivalla tavalla osiin myöhempää käsittelyä varten
-                            lunchListArray = message.split("| ");
                             this.setState({
                                 LunchList: message
                             });
                         }
                     }
                 }
-                console.log(lunchListArray);
             })
     }
 

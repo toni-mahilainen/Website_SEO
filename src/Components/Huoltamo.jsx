@@ -4,9 +4,9 @@ import '../App.css';
 class Huoltopalvelut extends Component {
     render() {
         return (
-            <header>
+            <div className="lowerSubHeader">
                 <h1>Huoltopalvelut</h1>
-            </header>
+            </div>
         );
     }
 }
@@ -14,9 +14,9 @@ class Huoltopalvelut extends Component {
 class Varaosat extends Component {
     render() {
         return (
-            <header>
+            <div className="lowerSubHeader">
                 <h1>Varaosat</h1>
-            </header>
+            </div>
         );
     }
 }
@@ -24,9 +24,9 @@ class Varaosat extends Component {
 class Autopesu extends Component {
     render() {
         return (
-            <header>
+            <div className="lowerSubHeader">
                 <h1>Autopesu</h1>
-            </header>
+            </div>
         );
     }
 }

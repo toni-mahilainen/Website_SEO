@@ -132,31 +132,56 @@ nav a:hover {
   text-align: center;
   overflow: auto;
   height: 73vh;
+  display: flex;
 }
 
-#mainpageUpper, #mainpageLower {
-  height: 50%;
-}
-
-.carousel, .carousel-inner, .carousel-item {
+#mainpageLeft, #mainpageCenter, #mainpageRight {
   height: 100%;
 }
 
-.carousel img {
-  height: 100%;
-  margin: auto;
+#mainpageLeft, #mainpageRight {
+  width: 20%;
+  display: flex;
+}
+
+#mainpageLeft {
+  width: 80%;
+  justify-content: flex-start;
+}
+
+#mainpageRight {
+  justify-content: flex-end;
+}
+
+.InfoContainer li {
+  line-height: 2.5vh;
+}
+
+.InfoContainer h5,h4 {
+  margin-bottom: 1vh;
+  margin-top: 1.5vh;
+}
+
+#infoSide {
+  margin: auto 0;
+  padding: 1vw;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px 0 0 10px;
 }
 
 .mainpageHeader {
-  margin: 3vh auto;
+  margin: 3vh 0;
   padding: 0 2vw;
   height: 8vh;
   width: fit-content;
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 158, 0.5);
-  box-shadow: 0px 0px 8px 6px rgba(0, 0, 158, 0.8);
-  border-radius: 100px;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 0 20px 20px 0;
 }
 
 .mainpageHeader h1 {
@@ -169,47 +194,6 @@ nav a:hover {
   padding-right: 10%;
   display: flex;
   justify-content: space-between;
-}
-
-.box {
-  height: 200px;
-  width: 200px;
-  border: black 2px solid;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  border-radius: 100px;
-  animation: 1s 1 toCircle;
-}
-
-.box:hover {
-  animation: 1s 1 toBox;
-  animation-fill-mode: forwards;
-}
-
-.box span {
-  align-self: center;
-  color: white;
-}
-
-@keyframes toBox {
-  from {
-    border-radius: 100px;
-  }
-
-  to {
-    border-radius: 10px;
-  }
-}
-
-@keyframes toCircle {
-  from {
-    border-radius: 10px;
-  }
-
-  to {
-    border-radius: 100px;
-  }
 }
 
 /* --------------------------------ETUSIVU-------------------------------- */
@@ -253,9 +237,35 @@ nav a:hover {
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
 
 #coffeeRestaurant {
-  text-align: center;
   overflow: auto;
   height: 75vh;
+}
+
+#coffeeRestaurantUpper {
+  text-align: center;
+}
+
+#lunchMain {
+  margin: 4vh auto;
+  padding: 1vw;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+}
+
+#tblLunchList th, td{
+  padding: 2vh;
+}
+
+#tblLunchList th {
+  text-align: center;
+  font-size: calc(1.2em + 1vmin);
+}
+
+#tblLunchList td {
+  font-size: calc(0.6em + 1vmin);
 }
 
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
@@ -268,8 +278,6 @@ nav a:hover {
   height: 75vh;
 }
 
-
-
 /* --------------------------------HUOLTAMO-------------------------------- */
 
 /* --------------------------------PALIKKALA-------------------------------- */
@@ -279,8 +287,6 @@ nav a:hover {
   overflow: auto;
   height: 75vh;
 }
-
-
 
 /* --------------------------------PALIKKALA-------------------------------- */
 
@@ -410,12 +416,7 @@ footer section {
 
 footer h4 {
   width: 100%;
-  padding-bottom: 1.6vh;
-}
-
-footer address {
-  width: 100%;
-  line-height: 2.7vh;
+  padding-bottom: 1vh;
 }
 
 .openInfoContainer li {
@@ -453,12 +454,6 @@ footer address {
   border: 0; 
   position: relative; 
   top: -50px;
-}
-
-@media screen and (min-width: 1024px){
-    .map {
-        height: 500px;
-    }
 }
 
 @keyframes heightUp {
@@ -510,6 +505,10 @@ footer address {
   max-height: 100vh;
 }
 
+hr {
+  border-color: white;
+}
+
 .subHeader {
   margin: auto;
   padding: 0 0 1vh 0;
@@ -529,6 +528,10 @@ footer address {
   border-radius: 100px;
 }
 
+.lowerSubHeader {
+  text-align: center;
+}
+
 .subNav button {
   background: transparent;
   border: none;
@@ -543,6 +546,11 @@ footer address {
 .subNav button:hover {
   animation: 0.5s colorChange;
   color: rgba(100, 100, 245, 0.8);;
+}
+
+address {
+  width: 100%;
+  line-height: 2.7vh;
 }
 
 @keyframes colorChange {
