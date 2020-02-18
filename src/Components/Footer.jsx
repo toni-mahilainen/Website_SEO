@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 // import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 // import { compose, withProps } from "recompose";
 
@@ -95,6 +93,9 @@ class Footer extends Component {
                             <iframe title="Kosken autohuolto Oy:n toimipaikat kartalla" src="https://www.google.com/maps/d/u/0/embed?mid=1apQ8Ch6OQ0LNuxhRXjcUYb8NiMZplyak&ll=60.755132,23.320535&z=9" center=""></iframe>
                         </div>
                     </section>
+                </div>
+                <div id="small" className="footerHidden">
+                    <small>Developed By Toni Mahilainen</small>
                 </div>
             </footer>
         );

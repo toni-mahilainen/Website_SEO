@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class Etusivu extends Component {
     render() {

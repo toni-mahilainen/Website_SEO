@@ -75,7 +75,7 @@ class KahvilaRavintola extends Component {
     }
 
     getFacebookFeed() {
-        // lähetetään GET -pyyntö facebookin Graph APIin
+        // lähetetään GET -pyyntö facebookin Graph API:lle
         // Parametreina page ID, posts (jotta saadaan vastauksena julkiset julkaisut) sekä Access Token, joka varmistaa tunnistautumisen
         axios.get('https://graph.facebook.com/106628357569438/posts?', /* OMA */
         // axios.get('https://graph.facebook.com/792968771068499/posts?', /* SEO */
