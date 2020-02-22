@@ -56,24 +56,93 @@ import Palaute from './Palaute';
 // 					)}
 // 			/>
 // 		</div>
-    // <ReactGoogleMapLoader
-    //     params={{
-    //         key: MY_API_KEY, // Define your api key here
-    //         libraries: "places,geometry", // To request multiple libraries, separate them with a comma
-    //     }}
-    //     render={googleMaps =>
-    //         googleMaps && (
-    //             <div style={{ height: "300px" }}>
-    //                 <ReactGoogleMap
-    //                     googleMaps={googleMaps}
-    //                     center={{ lat: 43.604363, lng: 1.443363 }}
-    //                     zoom={8}
-    //                 />
-    //             </div>
-    //         )}
-    // />
+// <ReactGoogleMapLoader
+//     params={{
+//         key: MY_API_KEY, // Define your api key here
+//         libraries: "places,geometry", // To request multiple libraries, separate them with a comma
+//     }}
+//     render={googleMaps =>
+//         googleMaps && (
+//             <div style={{ height: "300px" }}>
+//                 <ReactGoogleMap
+//                     googleMaps={googleMaps}
+//                     center={{ lat: 43.604363, lng: 1.443363 }}
+//                     zoom={8}
+//                 />
+//             </div>
+//         )}
+// />
 
 class App extends Component {
+    componentDidMount() {
+        let screenwidth = window.screen.width;
+
+        if (screenwidth <= 1000) {
+            let nav = document.getElementById("nav");
+            let hiddens = document.getElementsByClassName("nav-link");
+
+            for (let index = 0; index < hiddens.length; index++) {
+                if (hiddens[index].classList.contains("visibleLink") === false) {
+                    hiddens[index].classList.add("hiddenLink");
+                }
+            }
+
+            nav.classList.add("smallNav");
+        }
+    }
+
+    heightUp() {
+        console.log("up");
+        let screenwidth = window.screen.width;
+        console.log(screenwidth);
+
+        if (screenwidth <= 1000) {
+            let nav = document.getElementById("nav");
+            let hiddens = document.getElementsByClassName("nav-link");
+
+            for (let index = 0; index < hiddens.length; index++) {
+                hiddens[index].classList.remove("hiddenLink");
+                hiddens[index].classList.add("visibleLink");
+            }
+
+            nav.classList.replace("smallNav", "largeNav");
+        }
+    }
+
+    heightDown() {
+        console.log("down");
+        
+        let screenwidth = window.screen.width;
+
+        if (screenwidth <= 1000) {
+            let nav = document.getElementById("nav");
+            let hiddens = document.getElementsByClassName("nav-link");
+
+            for (let index = 0; index < hiddens.length; index++) {
+                if (hiddens[index].classList.contains("activeLink") === false) {
+                    hiddens[index].classList.add("hiddenLink");
+                }
+                
+                hiddens[index].classList.remove("visibleLink");
+            }
+
+            nav.classList.replace("largeNav", "smallNav");
+        }
+    }
+
+    addActiveClass(e) {
+        let link = e.target;
+        let links = document.getElementsByClassName("nav-link");
+        
+        for (let index = 0; index < links.length; index++) {
+            if (links[index].classList.contains("activeLink")) {
+                links[index].classList.remove("activeLink");
+            }
+        }
+        
+        link.classList.add("activeLink");
+    }
+
     render() {
         return (
             <div className="App">
@@ -82,14 +151,14 @@ class App extends Component {
                 }
                 <Header />
                 <Router>
-                    <nav className="navbar navbar-expand-lg">
+                    <nav id="nav" className="navbar navbar-expand-lg" onMouseEnter={this.heightUp} onMouseLeave={this.heightDown}>
                         <ul className="navbar-nav mr-auto ml-auto">
-                            <li><Link to={"/"} className="nav-link">Etusivu</Link></li>
-                            <li><Link to={"/Yritys"} className="nav-link">Yritys</Link></li>
-                            <li><Link to={"/Kahvila_Ravintola"} className="nav-link">Kahvila / Ravintola</Link></li>
-                            <li><Link to={"/Huoltamo"} className="nav-link">Huoltamo</Link></li>
-                            <li><Link to={"/Palikkala"} className="nav-link">SEO Palikkala</Link></li>
-                            <li><Link to={"/Palaute"} className="nav-link">Palaute</Link></li>
+                            <li><Link onClick={this.addActiveClass} to={"/"} className="nav-link visibleLink">Etusivu</Link></li>
+                            <li><Link onClick={this.addActiveClass} to={"/Yritys"} className="nav-link">Yritys</Link></li>
+                            <li><Link onClick={this.addActiveClass} to={"/Kahvila_Ravintola"} className="nav-link">Kahvila / Ravintola</Link></li>
+                            <li><Link onClick={this.addActiveClass} to={"/Huoltamo"} className="nav-link">Huoltamo</Link></li>
+                            <li><Link onClick={this.addActiveClass} to={"/Palikkala"} className="nav-link">SEO Palikkala</Link></li>
+                            <li><Link onClick={this.addActiveClass} to={"/Palaute"} className="nav-link">Palaute</Link></li>
                         </ul>
                     </nav>
                     <Switch>

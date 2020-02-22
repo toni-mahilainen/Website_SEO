@@ -76,9 +76,9 @@ class Palikkala extends Component {
                     </div>
                     <div>
                         <ul className="subNav">
-                            <li><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button><span>/</span></li>
-                            <li><button id="cafeteriaBtn" onClick={this.handleNavClick}>Kahvio + tarvikemyynti</button><span>/</span></li>
-                            <li><button id="fuelBtn" onClick={this.handleNavClick}>Polttoaineet + nestekaasu</button></li>
+                            <li className="leftSubLink"><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button></li>
+                            <li className="middleSubLink"><button id="cafeteriaBtn" onClick={this.handleNavClick}>Kahvio + tarvikemyynti</button></li>
+                            <li className="rightSubLink"><button id="fuelBtn" onClick={this.handleNavClick}>Polttoaineet + nestekaasu</button></li>
                         </ul>
                     </div>
                 </section>

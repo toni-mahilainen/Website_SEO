@@ -75,8 +75,8 @@ class Huoltamo extends Component {
                     </div>
                     <div>
                         <ul className="subNav" id="serviceNav">
-                            <li><button id="serviceBtn" onClick={this.handleNavClick}>Huoltopalvelut</button><span>/</span></li>
-                            <li><button id="sparePartsBtn" onClick={this.handleNavClick}>Varaosat</button><span>/</span></li>
+                            <li><button id="serviceBtn" onClick={this.handleNavClick}>Huoltopalvelut</button></li>
+                            <li className="middleSubLink"><button id="sparePartsBtn" onClick={this.handleNavClick}>Varaosat</button></li>
                             <li><button id="carWashBtn" onClick={this.handleNavClick}>Autopesu</button></li>
                         </ul>
                     </div>

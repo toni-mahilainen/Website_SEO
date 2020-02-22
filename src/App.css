@@ -107,7 +107,7 @@ header img {
 }
 
 nav {
-  height: 5vh;
+  height: fit-content;
   background-color: rgba(0, 0, 158, 0.8);
   border-radius: 50% 50% 25% 25% / 0% 0% 25% 25%;
   
@@ -122,6 +122,34 @@ nav a {
 nav a:hover {
   animation: 0.5s colorChange;
   color: rgba(100, 100, 245, 0.8);
+}
+
+.largeNav {
+  animation: 1s heightChangeNav;
+  height: fit-content;
+}
+
+.smallNav {
+  animation: 1s heightChangeNav;
+  height: fit-content;
+}
+
+.visibleLink {
+  display: block;
+}
+
+.hiddenLink {
+  display: none;
+}
+
+@keyframes heightChangeNav {
+  from {
+    height: fit-content;
+  }
+
+  to {
+    height: fit-content;
+  }
 }
 
 /* --------------------------------HEADER-------------------------------- */
@@ -141,6 +169,7 @@ nav a:hover {
 
 #mainpageLeft, #mainpageRight {
   width: 20%;
+  overflow: auto;
   display: flex;
 }
 
@@ -219,6 +248,10 @@ nav a:hover {
   background-color: rgba(0, 0, 158, 0.6);
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
   border-radius: 10px;
+}
+
+.storyContainer {
+  padding: 1em;
 }
 
 .storyContainer h2, p {
@@ -300,6 +333,10 @@ nav a:hover {
 
 #contactUpper {
   padding-bottom: 1.2vh;
+}
+
+.contactContainer {
+  padding: 1em;
 }
 
 #contactLower {
@@ -409,7 +446,14 @@ footer section {
   opacity: 0;
 }
 
-#openInfo {
+#openInfoBigScreen {
+  display: block;
+  border-left:  1px solid white;
+  border-right:  1px solid white;
+}
+
+#openInfoSmallScreen {
+  display: none;
   border-left:  1px solid white;
   border-right:  1px solid white;
 }
@@ -531,7 +575,7 @@ hr {
   display: flex;
   justify-content: center;
   margin: 2vh auto;
-  padding: 0 10px;
+  padding: 0.7em 0;
   width: fit-content;
   background-color: rgba(0, 0, 158, 0.5);
   border-radius: 100px;
@@ -542,6 +586,7 @@ hr {
 }
 
 .subNav button {
+  width: fit-content;
   background: transparent;
   border: none;
   outline: none;
@@ -549,7 +594,20 @@ hr {
   font-family: sans-serif;
   letter-spacing: 2px;
   font-weight: bold;
-  margin: 10px;
+  padding: 0 1em;
+}
+
+.leftSubLink {
+  border-right: 1px solid white;
+}
+
+.middleSubLink {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.rightSubLink {
+  border-left: 1px solid white;
 }
 
 .subNav button:hover {
@@ -573,3 +631,48 @@ address {
 }
 
 /* --------------------------------YLEISET-------------------------------- */
+
+/* --------------------------------RESPONSIIVISUUS-------------------------------- */
+
+@media only screen and (max-width: 1700px) {
+  #openInfoBigScreen {
+    display: none;
+  }
+  
+  #openInfoSmallScreen {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  html {
+    font-size: calc(0.3em + 1vmin);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  nav {
+    height: fit-content;
+    text-align: center;
+  }
+
+  .subHeader {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .storyContainer, nav {
+    font-size: calc(1.3em + 1vmin);
+  }
+
+  .subNav {
+    font-size: calc(1em + 1vmin);
+  }
+
+  #companyLower {
+    width: 70%;
+  }
+}
+
+/* --------------------------------RESPONSIIVISUUS-------------------------------- */

@@ -62,7 +62,7 @@ class Footer extends Component {
                             (02) 4846 266 (kahvila / Palikkala)
                         </address>
                     </section>
-                    <section id="openInfo">
+                    <section id="openInfoBigScreen">
                         <h4>Aukioloajat</h4>
                         <Container bsPrefix="openInfoContainer footerHidden">
                             <Row>
@@ -81,6 +81,31 @@ class Footer extends Component {
                                     <h5>SEO Palikkala</h5>
                                     <ul>
                                         <li>Maanantai - Perjantai</li>
+                                        <li className="listTimes">07.30 - 16.00</li>
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
+                    <section id="openInfoSmallScreen">
+                        <h4>Aukioloajat</h4>
+                        <Container bsPrefix="openInfoContainer footerHidden">
+                            <Row>
+                                <Col>
+                                    <h5>SEO Koski</h5>
+                                    <ul>
+                                        <li>Ma - Pe</li>
+                                        <li className="listTimes">06.00 - 19.00</li>
+                                        <li>La</li>
+                                        <li className="listTimes">08.00 - 16.00</li>
+                                        <li>Su</li>
+                                        <li className="listTimes">09.00 - 16.00</li>
+                                    </ul>
+                                </Col>
+                                <Col>
+                                    <h5>SEO Palikkala</h5>
+                                    <ul>
+                                        <li>Ma - Pe</li>
                                         <li className="listTimes">07.30 - 16.00</li>
                                     </ul>
                                 </Col>

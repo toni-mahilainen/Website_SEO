@@ -143,8 +143,8 @@ class KahvilaRavintola extends Component {
                     </div>
                     <div>
                         <ul className="subNav" id="coffeeRestaurantNav">
-                            <li><button id="coffeeBtn" onClick={this.handleNavClick}>Kahvila</button><span>/</span></li>
-                            <li><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button><span>/</span></li>
+                            <li><button id="coffeeBtn" onClick={this.handleNavClick}>Kahvila</button></li>
+                            <li className="middleSubLink"><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button></li>
                             <li><button id="restaurantBtn" onClick={this.handleNavClick}>Ravintola</button></li>
                         </ul>
                     </div>
