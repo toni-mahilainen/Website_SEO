@@ -40,6 +40,7 @@ class Huoltamo extends Component {
             CarWashVisible: false
         };
         this.handleNavClick = this.handleNavClick.bind(this);
+        this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
     handleNavClick(btn) {
@@ -66,6 +67,33 @@ class Huoltamo extends Component {
             alert("Tapahtui virhe! Ole hyvä ja lataa sivu uudelleen.");
         }
     }
+
+    handleDropdownChange(select) {
+        let selectValue = select.target.value;
+        
+        if (selectValue === "service") {
+            this.setState({
+                ServiceVisible: true,
+                SparePartsVisible: false,
+                CarWashVisible: false
+            });
+        } else if (selectValue === "spareParts") {
+            this.setState({
+                ServiceVisible: false,
+                SparePartsVisible: true,
+                CarWashVisible: false
+            });
+        } else if (selectValue === "carWash") {
+            this.setState({
+                ServiceVisible: false,
+                SparePartsVisible: false,
+                CarWashVisible: true
+            });
+        } else {
+            alert("Tapahtui virhe! Ole hyvä ja lataa sivu uudelleen.");
+        }
+    }
+
     render() {
         return (
             <main id="service">
@@ -79,6 +107,11 @@ class Huoltamo extends Component {
                             <li className="middleSubLink"><button id="sparePartsBtn" onClick={this.handleNavClick}>Varaosat</button></li>
                             <li><button id="carWashBtn" onClick={this.handleNavClick}>Autopesu</button></li>
                         </ul>
+                        <select className="subDropdown" onChange={this.handleDropdownChange}>
+                            <option value="service">Huoltopalvelut</option>
+                            <option value="spareParts">Varaosat</option>
+                            <option value="carWash">Autopesu</option>
+                        </select>
                     </div>
                 </section>
                 <section id="serviceLower">

@@ -92,26 +92,26 @@ class App extends Component {
     }
 
     heightUp() {
-        console.log("up");
         let screenwidth = window.screen.width;
-        console.log(screenwidth);
 
         if (screenwidth <= 1000) {
             let nav = document.getElementById("nav");
             let hiddens = document.getElementsByClassName("nav-link");
 
-            for (let index = 0; index < hiddens.length; index++) {
-                hiddens[index].classList.remove("hiddenLink");
-                hiddens[index].classList.add("visibleLink");
-            }
+            setTimeout(
+                function () {
+                    for (let index = 0; index < hiddens.length; index++) {
+                        hiddens[index].classList.remove("hiddenLink");
+                        hiddens[index].classList.add("visibleLink");
+                    }
+                }
+                , 50)
 
             nav.classList.replace("smallNav", "largeNav");
         }
     }
 
     heightDown() {
-        console.log("down");
-        
         let screenwidth = window.screen.width;
 
         if (screenwidth <= 1000) {
@@ -122,7 +122,7 @@ class App extends Component {
                 if (hiddens[index].classList.contains("activeLink") === false) {
                     hiddens[index].classList.add("hiddenLink");
                 }
-                
+
                 hiddens[index].classList.remove("visibleLink");
             }
 
@@ -133,13 +133,13 @@ class App extends Component {
     addActiveClass(e) {
         let link = e.target;
         let links = document.getElementsByClassName("nav-link");
-        
+
         for (let index = 0; index < links.length; index++) {
             if (links[index].classList.contains("activeLink")) {
                 links[index].classList.remove("activeLink");
             }
         }
-        
+
         link.classList.add("activeLink");
     }
 

@@ -72,13 +72,14 @@ class KahvilaRavintola extends Component {
             LunchList: ""
         };
         this.handleNavClick = this.handleNavClick.bind(this);
+        this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
     getFacebookFeed() {
         // lähetetään GET -pyyntö facebookin Graph API:lle
         // Parametreina page ID, posts (jotta saadaan vastauksena julkiset julkaisut) sekä Access Token, joka varmistaa tunnistautumisen
         axios.get('https://graph.facebook.com/106628357569438/posts?', /* OMA */
-        // axios.get('https://graph.facebook.com/792968771068499/posts?', /* SEO */
+            // axios.get('https://graph.facebook.com/792968771068499/posts?', /* SEO */
             {
                 params: {
                     /* OMA */ access_token: "EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
@@ -134,6 +135,32 @@ class KahvilaRavintola extends Component {
         }
     }
 
+    handleDropdownChange(select) {
+        let selectValue = select.target.value;
+        
+        if (selectValue === "coffee") {
+            this.setState({
+                CoffeeVisible: true,
+                LunchVisible: false,
+                RestaurantVisible: false
+            });
+        } else if (selectValue === "lunch") {
+            this.setState({
+                CoffeeVisible: false,
+                LunchVisible: true,
+                RestaurantVisible: false
+            });
+        } else if (selectValue === "restaurant") {
+            this.setState({
+                CoffeeVisible: false,
+                LunchVisible: false,
+                RestaurantVisible: true
+            });
+        } else {
+            alert("Tapahtui virhe! Ole hyvä ja lataa sivu uudelleen.");
+        }
+    }
+
     render() {
         return (
             <main id="coffeeRestaurant">
@@ -147,6 +174,11 @@ class KahvilaRavintola extends Component {
                             <li className="middleSubLink"><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button></li>
                             <li><button id="restaurantBtn" onClick={this.handleNavClick}>Ravintola</button></li>
                         </ul>
+                        <select className="subDropdown" onChange={this.handleDropdownChange}>
+                            <option value="coffee">Kahvila</option>
+                            <option value="lunch">Lounas</option>
+                            <option value="restaurant">Ravintola</option>
+                        </select>
                     </div>
                 </section>
                 <section id="coffeeRestaurantLower">

@@ -40,6 +40,7 @@ class Palikkala extends Component {
             FuelVisible: false
         };
         this.handleNavClick = this.handleNavClick.bind(this);
+        this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
     handleNavClick(btn) {
@@ -67,6 +68,32 @@ class Palikkala extends Component {
         }
     }
 
+    handleDropdownChange(select) {
+        let selectValue = select.target.value;
+        
+        if (selectValue === "lunch") {
+            this.setState({
+                LunchVisible: true,
+                CafeteriaVisible: false,
+                FuelVisible: false
+            });
+        } else if (selectValue === "cafeteria") {
+            this.setState({
+                LunchVisible: false,
+                CafeteriaVisible: true,
+                FuelVisible: false
+            });
+        } else if (selectValue === "fuel") {
+            this.setState({
+                LunchVisible: false,
+                CafeteriaVisible: false,
+                FuelVisible: true
+            });
+        } else {
+            alert("Tapahtui virhe! Ole hyvä ja lataa sivu uudelleen.");
+        }
+    }
+
     render() {
         return (
             <main id="palikkala">
@@ -76,10 +103,15 @@ class Palikkala extends Component {
                     </div>
                     <div>
                         <ul className="subNav">
-                            <li className="leftSubLink"><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button></li>
+                            <li><button id="lunchBtn" onClick={this.handleNavClick}>Lounas</button></li>
                             <li className="middleSubLink"><button id="cafeteriaBtn" onClick={this.handleNavClick}>Kahvio + tarvikemyynti</button></li>
-                            <li className="rightSubLink"><button id="fuelBtn" onClick={this.handleNavClick}>Polttoaineet + nestekaasu</button></li>
+                            <li><button id="fuelBtn" onClick={this.handleNavClick}>Polttoaineet + nestekaasu</button></li>
                         </ul>
+                        <select className="subDropdown" onChange={this.handleDropdownChange}>
+                            <option value="lunch">Lounas</option>
+                            <option value="cafeteria">Kahvio + tarvikemyynti</option>
+                            <option value="fuel">Polttoaineet + nestekaasu</option>
+                        </select>
                     </div>
                 </section>
                 <section id="palikkalaLower">
