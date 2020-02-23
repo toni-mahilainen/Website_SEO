@@ -20,30 +20,51 @@ import { Container, Row, Col } from 'react-bootstrap';
 // ));
 
 class Footer extends Component {
-    heightUp() {
-        let footer = document.getElementById("footer");
-        let hiddens = document.getElementsByClassName("footerHidden");
+    componentDidMount() {
+        let screenwidth = window.screen.width;
+        
+        if (screenwidth < 992) {
+            let hiddens = document.getElementsByClassName("footerHidden");
 
-        for (let index = 0; index < hiddens.length; index++) {
-            hiddens[index].classList.remove("hidden");
-            hiddens[index].classList.add("visible");
+            for (let index = 0; index < hiddens.length; index++) {
+                hiddens[index].classList.remove("hidden");
+                hiddens[index].classList.add("visible");
+            }
         }
+    }
 
-        footer.classList.remove("smallFooter");
-        footer.classList.add("largeFooter");
+    heightUp() {
+        let screenwidth = window.screen.width;
+        
+        if (screenwidth >= 992) {
+            let footer = document.getElementById("footer");
+            let hiddens = document.getElementsByClassName("footerHidden");
+
+            for (let index = 0; index < hiddens.length; index++) {
+                hiddens[index].classList.remove("hidden");
+                hiddens[index].classList.add("visible");
+            }
+
+            footer.classList.remove("smallFooter");
+            footer.classList.add("largeFooter");
+        }
     }
 
     heightDown() {
-        let footer = document.getElementById("footer");
-        let hiddens = document.getElementsByClassName("footerHidden");
+        let screenwidth = window.screen.width;
 
-        for (let index = 0; index < hiddens.length; index++) {
-            hiddens[index].classList.remove("visible");
-            hiddens[index].classList.add("hidden");
+        if (screenwidth >= 992) {
+            let footer = document.getElementById("footer");
+            let hiddens = document.getElementsByClassName("footerHidden");
+
+            for (let index = 0; index < hiddens.length; index++) {
+                hiddens[index].classList.remove("visible");
+                hiddens[index].classList.add("hidden");
+            }
+
+            footer.classList.remove("largeFooter");
+            footer.classList.add("smallFooter");
         }
-
-        footer.classList.remove("largeFooter");
-        footer.classList.add("smallFooter");
     }
 
     render() {

@@ -77,7 +77,7 @@ class App extends Component {
     componentDidMount() {
         let screenwidth = window.screen.width;
 
-        if (screenwidth <= 1000) {
+        if (screenwidth < 992) {
             let nav = document.getElementById("nav");
             let hiddens = document.getElementsByClassName("nav-link");
 
@@ -94,7 +94,7 @@ class App extends Component {
     heightUp() {
         let screenwidth = window.screen.width;
 
-        if (screenwidth <= 1000) {
+        if (screenwidth < 992) {
             let nav = document.getElementById("nav");
             let hiddens = document.getElementsByClassName("nav-link");
 
@@ -114,7 +114,7 @@ class App extends Component {
     heightDown() {
         let screenwidth = window.screen.width;
 
-        if (screenwidth <= 1000) {
+        if (screenwidth < 992) {
             let nav = document.getElementById("nav");
             let hiddens = document.getElementsByClassName("nav-link");
 
