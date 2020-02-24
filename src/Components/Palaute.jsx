@@ -123,11 +123,12 @@ class Palaute extends Component {
                                     <input type="text" className="contactInput" id="email" onChange={this.handleChangeInput} /><br />
                                     Aihe<br />
                                     <input type="text" className="contactInput" id="subject" onChange={this.handleChangeInput} /><br />
-                                    <button type="submit">Lähetä</button>
+                                    <button id="submitLargeScreen" type="submit">Lähetä</button>
                                 </div>
                                 <div id="formRight">
                                     Viesti<br />
                                     <textarea type="text" className="contactInput" id="message" onChange={this.handleChangeInput}></textarea><br />
+                                    <button id="submitSmallScreen" type="submit">Lähetä</button>
                                 </div>
                             </form>
                         </Row>

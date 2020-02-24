@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import Lounaslista from './Lounaslista';
 
 class Kahvila extends Component {
     render() {
@@ -14,39 +15,9 @@ class Kahvila extends Component {
 
 class Lounas extends Component {
     render() {
-        // Pilkotaan merkkijono sopivalla tavalla osiin myöhempää käsittelyä varten
-        let lunchListArray = this.props.lunchListProp.split("| ");
         return (
             <div>
-                <div id="lunchMain">
-                    <table id="tblLunchList">
-                        <thead>
-                            <tr>
-                                <th>{lunchListArray[0]}</th>
-                            </tr>
-                            <tr>
-                                <th>{lunchListArray[1]}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{lunchListArray[2]}</td>
-                            </tr>
-                            <tr>
-                                <td>{lunchListArray[3]}</td>
-                            </tr>
-                            <tr>
-                                <td>{lunchListArray[4]}</td>
-                            </tr>
-                            <tr>
-                                <td>{lunchListArray[5]}</td>
-                            </tr>
-                            <tr>
-                                <td>{lunchListArray[6]}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <Lounaslista />
             </div>
         );
     }

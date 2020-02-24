@@ -7,8 +7,13 @@ class Header extends Component {
     render() {
         return (
             <header id="mainHeader">
-                <a id="logoLink" href="/"><img src={logo} alt="SEO Logo" width="100%"/></a>
-                <a id="facebook" href="https://www.facebook.com/koskenseo/" target="blank"><span className="fab fa-facebook"></span></a>
+                <div id="headerLeft"></div>
+                <div id="headerMiddle">
+                    <a id="logoLink" href="/"><img src={logo} alt="SEO Logo" width="100%" /></a>
+                </div>
+                <div id="headerRight">
+                    <a id="facebook" href="https://www.facebook.com/koskenseo/" target="blank"><span className="fab fa-facebook"></span></a>
+                </div>
             </header>
         );
     }

@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import Lounaslista from './Lounaslista';
 
 class Etusivu extends Component {
     render() {
         return (
             <main id="mainpage">
                 <section id="mainpageLeft">
-                    <div className="mainpageHeader">
-                        <h1>Tervetuloa SEO Kosken kotisivuille</h1>
+                    <div id="mainpageHeagerWrapper">
+                        <div className="mainpageHeader">
+                            <h1>Tervetuloa SEO Kosken kotisivuille</h1>
+                        </div>
+                    </div>
+                    <div className="mainpageLunchDiv">
+                        <Lounaslista />
+                        <h4>LOUNASLISTA</h4>
                     </div>
                 </section>
                 <section id="mainpageRight">
@@ -37,7 +44,7 @@ class Etusivu extends Component {
                                     </ul>
                                 </Col>
                             </Row>
-                            <hr/>
+                            <hr />
                             <Row>
                                 <Col>
                                     <h4>Yhteystiedot</h4>
