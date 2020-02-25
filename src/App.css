@@ -222,15 +222,24 @@ nav a:hover {
   display: flex;
 }
 
-.mainpageLunchDiv #lunchMain {
+#lunchListWrapper {
   border-radius: 0 10px 10px 0;
   width: 10vh;
   height: 30vh;
-  margin: auto 0;
+  align-self: center;
+  /* margin: auto 0; */
+}
+
+.mainpageLunchDiv #lunchMain {
+  border-radius: inherit;
+  width: inherit;
+  height: inherit;
+  margin: inherit;
 }
 
 .mainpageLunchDiv #lunchMain #tblLunchList {
-  display: none;
+  margin: 0 auto;
+  opacity: 0;
 }
 
 .mainpageLunchDiv h4 {
@@ -254,6 +263,35 @@ nav a:hover {
   justify-content: space-between;
 }
 
+.largeLunchList {
+  animation: 1s sizeUp;
+  animation-fill-mode: forwards;
+}
+
+.smallLunchList {
+  animation: 1s sizeDown;
+  animation-fill-mode: forwards;
+}
+
+.hiddenLunchlist {
+  animation: 1s Hidden;
+  animation-fill-mode: forwards;
+}
+
+.visibleLunchlist {
+  animation: 1s Visible;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.hiddenText {
+  display: none;
+}
+
+.visibleText {
+  display: block;
+}
+
 @keyframes sizeUp {
   from {
     width: 10vh;
@@ -261,15 +299,15 @@ nav a:hover {
   }
 
   to {
-    width: fit-content;
-    height: fit-content;
+    width: 90vh;
+    height: 45vh;
   }
 }
 
 @keyframes sizeDown {
   from {
-    width: fit-content;
-    height: fit-content;
+    width: 90vh;
+    height: 45vh;
   }
 
   to {
@@ -278,23 +316,23 @@ nav a:hover {
   }
 }
 
-@keyframes Visible {
+@keyframes DisplayBlock {
   from {
-    opacity: 0;
+    display: none;
   }
 
   to {
-    opacity: 1;
+    display: block;
   }
 }
 
-@keyframes Hidden {
+@keyframes DisplayNone {
   from {
-    opacity: 1;
+    display: block;
   }
 
   to {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -558,12 +596,12 @@ footer h4 {
 
 .hidden {
   animation: 1s Hidden;
-  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .visible {
   animation: 1s Visible;
-  opacity: 1;
+  animation-fill-mode: forwards;
 }
 
 .visibleNoAnimation {

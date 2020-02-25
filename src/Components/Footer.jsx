@@ -129,7 +129,7 @@ class Footer extends Component {
                     <section id="googleMap">
                         <h4>Sijainti</h4>
                         <div className="footerHidden" id="footerMap">
-                            <iframe title="Kosken autohuolto Oy:n toimipaikat kartalla" src="https://www.google.com/maps/d/u/0/embed?mid=1apQ8Ch6OQ0LNuxhRXjcUYb8NiMZplyak&ll=60.755132,23.320535&z=8"></iframe>
+                            <iframe title="Kosken autohuolto Oy:n toimipaikat kartalla" src="https://www.google.com/maps/d/u/0/embed?mid=1apQ8Ch6OQ0LNuxhRXjcUYb8NiMZplyak&ll=60.755132,23.320535&z=9"></iframe>
                         </div>
                     </section>
                 </div>

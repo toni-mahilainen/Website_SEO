@@ -4,6 +4,45 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Lounaslista from './Lounaslista';
 
 class Etusivu extends Component {
+    lunchlistSizeUp() {
+        let lunchDiv = document.getElementById("lunchListWrapper");
+        let lunchList = document.getElementById("tblLunchList");
+        let verticalText = document.getElementById("verticalText");
+
+        lunchDiv.classList.remove("smallLunchList");
+        lunchDiv.classList.add("largeLunchList");
+
+        verticalText.classList.remove("visibleText");
+        verticalText.classList.add("hiddenText");
+
+        lunchList.classList.remove("hiddenLunchlist");
+        lunchList.classList.add("visibleLunchlist");
+
+    }
+
+    lunchlistSizeDown() {
+        let lunchDiv = document.getElementById("lunchListWrapper");
+        let lunchList = document.getElementById("tblLunchList");
+        let verticalText = document.getElementById("verticalText");
+
+        lunchList.classList.remove("visibleLunchlist");
+        lunchList.classList.add("hiddenLunchlist");
+
+        setTimeout(
+            function () {
+                lunchDiv.classList.remove("largeLunchList");
+                lunchDiv.classList.add("smallLunchList");
+            }
+            , 700);
+
+        setTimeout(
+            function () {
+                verticalText.classList.remove("hiddenText");
+                verticalText.classList.add("visibleText");
+            }
+            , 1700);
+    }
+
     render() {
         return (
             <main id="mainpage">
@@ -14,8 +53,10 @@ class Etusivu extends Component {
                         </div>
                     </div>
                     <div className="mainpageLunchDiv">
-                        <Lounaslista />
-                        <h4>LOUNASLISTA</h4>
+                        <div id="lunchListWrapper" onMouseEnter={this.lunchlistSizeUp} onMouseLeave={this.lunchlistSizeDown}>
+                            <Lounaslista />
+                        </div>
+                        <h4 id="verticalText">LOUNASLISTA</h4>
                     </div>
                 </section>
                 <section id="mainpageRight">

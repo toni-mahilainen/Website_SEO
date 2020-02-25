@@ -51,7 +51,6 @@ class Lounaslista extends Component {
         let lunchListArray = this.state.LunchList.split("| ");
         return (
             <div id="lunchMain">
-                
                 <table id="tblLunchList">
                     <thead>
                         <tr>
