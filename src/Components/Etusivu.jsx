@@ -47,7 +47,7 @@ class Etusivu extends Component {
         return (
             <main id="mainpage">
                 <section id="mainpageLeft">
-                    <div id="mainpageHeagerWrapper">
+                    <div id="mainpageHeaderWrapper">
                         <div className="mainpageHeader">
                             <h1>Tervetuloa SEO Kosken kotisivuille</h1>
                         </div>

@@ -197,7 +197,7 @@ nav a:hover {
   border-radius: 10px 0 0 10px;
 }
 
-#mainpageHeagerWrapper {
+#mainpageHeaderWrapper {
   height: 14vh;
   display: flex;
 }
@@ -227,7 +227,7 @@ nav a:hover {
   width: 10vh;
   height: 30vh;
   align-self: center;
-  /* margin: auto 0; */
+  justify-self: center;
 }
 
 .mainpageLunchDiv #lunchMain {
@@ -253,6 +253,7 @@ nav a:hover {
 
 .mainpageHeader h1 {
   align-self: center;
+  margin: 0 auto;
 }
 
 .boxLinks {
@@ -282,6 +283,7 @@ nav a:hover {
   animation: 1s Visible;
   animation-delay: 0.7s;
   animation-fill-mode: forwards;
+  
 }
 
 .hiddenText {
@@ -373,7 +375,6 @@ nav a:hover {
 .storyContainer p {
   font-size: calc(0.5em + 1vmin);
   line-height: 1.3em;
-  letter-spacing: 0.2vw;
 }
 
 /* --------------------------------YRITYS-------------------------------- */
@@ -620,10 +621,6 @@ footer h4 {
   border: 0; 
   position: relative; 
   top: -50px;
-}
-
-.i4ewOd-pzNkMb-haAclf {
-  opacity: 0;
 }
 
 #small {
@@ -907,6 +904,8 @@ address {
     background-image: url(../src/Images/backSmall.png);
   }
 
+  /* ----------------------ETUSIVU---------------------- */
+
   #headerLeft, #headerRight {
     width: 20%;
     display: flex;
@@ -919,6 +918,68 @@ address {
     justify-content: center;
   }
   
+  .mainpageLunchDiv {
+    display: block;
+    padding-bottom: 1em;
+  }
+
+  #lunchListWrapper {
+    border-radius: 10px 10px 10px 10px;
+    width: 30vh;
+    height: 10vh;
+    margin: 0 auto;
+  }
+
+  .mainpageLunchDiv h4 {
+    position: relative;
+    transform: rotate(0deg);
+    height: fit-content;
+    width: 100%;
+    left: 0;
+    top: -6vh;
+  }
+
+  #tblLunchList td {
+    font-size: calc(0.9em + 1vmin);
+    line-height: 12px;
+  }
+
+  .largeLunchList {
+    animation: 1s sizeUpMobile;
+    animation-fill-mode: forwards;
+  }
+  
+  .smallLunchList {
+    animation: 1s sizeDownMobile;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes sizeUpMobile {
+    from {
+      width: 30vh;
+      height: 10vh;
+    }
+  
+    to {
+      width: 95%;
+      height: 100%;
+    }
+  }
+  
+  @keyframes sizeDownMobile {
+    from {
+      width: 95%;
+      height: 100%;
+    }
+  
+    to {
+      width: 30vh;
+      height: 10vh;
+    }
+  }
+
+  /* ----------------------ETUSIVU---------------------- */
+
   .storyContainer, nav {
     font-size: calc(1.3em + 1vmin);
   }
@@ -951,6 +1012,7 @@ address {
   .mainpageHeader {
     margin: 4vh auto;
     border-radius: 20px 20px 20px 20px;
+    width: 90%;
   }
 
   .mainpageHeader h1 {
@@ -968,7 +1030,7 @@ address {
   }
 
   #footerWrapper address, #footerWrapper li {
-    line-height: 15px;
+    line-height: 16px;
   }
 
   #small {
