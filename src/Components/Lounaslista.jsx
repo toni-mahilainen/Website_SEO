@@ -30,8 +30,6 @@ class Lounaslista extends Component {
                 // Vastaus palvelimelta JSON-muodossa, josta sijoitetaan julkaisut muuttujaan
                 if (response.status >= 200 && response.status < 300) {
                     let data = response.data.data;
-                    console.log(response);
-
 
                     for (let index = 0; index < data.length; index++) {
                         // Käydään kaikki julkaisut läpi silmukassa

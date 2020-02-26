@@ -243,11 +243,11 @@ nav a:hover {
 }
 
 .mainpageLunchDiv h4 {
-  position: fixed;
+  position: absolute;
   transform: rotate(-90deg);
   height: fit-content;
   align-self: center;
-  left: -5vh;
+  left: -45px;
   margin: auto;
 }
 
@@ -806,6 +806,10 @@ address {
     display: flex;
     justify-content: center;
   }
+
+  .mainpageLunchDiv h4 {
+    left: -40px;
+  }
 }
 
 @media only screen and (max-width: 990px) {
@@ -814,9 +818,88 @@ address {
     text-align: center;
   }
 
+  /* ----------------------ETUSIVU---------------------- */
+  
+  #mainpageRight {
+    display: none;
+  }
+
+  #mainpageLeft {
+    width: 100%;
+  }
+
+  .mainpageHeader {
+    margin: 4vh auto;
+    border-radius: 20px 20px 20px 20px;
+    width: 80%;
+  }
+
   .mainpageHeader h1 {
     font-size: calc(1.4em + 1vmin);
   }
+
+  .mainpageLunchDiv {
+    display: block;
+    padding-bottom: 1em;
+  }
+
+  #lunchListWrapper {
+    border-radius: 10px 10px 10px 10px;
+    width: 30vh;
+    height: 10vh;
+    margin: 0 auto;
+  }
+
+  .mainpageLunchDiv h4 {
+    position: relative;
+    transform: rotate(0deg);
+    height: fit-content;
+    width: 100%;
+    left: 0;
+    top: -12%;
+    font-size: calc(0.8em + 1vmin);
+  }
+
+  #tblLunchList td {
+    font-size: calc(0.9em + 1vmin);
+    line-height: 12px;
+  }
+
+  .largeLunchList {
+    animation: 1s sizeUp990;
+    animation-fill-mode: forwards;
+  }
+  
+  .smallLunchList {
+    animation: 1s sizeDown990;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes sizeUp990 {
+    from {
+      width: 30vh;
+      height: 10vh;
+    }
+  
+    to {
+      width: 90%;
+      height: 100%;
+    }
+  }
+  
+  @keyframes sizeDown990 {
+    from {
+      width: 90%;
+      height: 100%;
+    }
+  
+    to {
+      width: 30vh;
+      height: 10vh;
+    }
+  }
+
+  /* ----------------------ETUSIVU---------------------- */
 
   .subHeader {
     display: none;
@@ -906,55 +989,22 @@ address {
 
   /* ----------------------ETUSIVU---------------------- */
 
-  #headerLeft, #headerRight {
-    width: 20%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  #headerMiddle {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .mainpageLunchDiv {
-    display: block;
-    padding-bottom: 1em;
-  }
-
-  #lunchListWrapper {
-    border-radius: 10px 10px 10px 10px;
-    width: 30vh;
-    height: 10vh;
-    margin: 0 auto;
-  }
-
   .mainpageLunchDiv h4 {
-    position: relative;
-    transform: rotate(0deg);
-    height: fit-content;
-    width: 100%;
-    left: 0;
-    top: -6vh;
-  }
-
-  #tblLunchList td {
-    font-size: calc(0.9em + 1vmin);
-    line-height: 12px;
+    top: -11%;
+    font-size: calc(1.1em + 1vmin);
   }
 
   .largeLunchList {
-    animation: 1s sizeUpMobile;
+    animation: 1s sizeUp600;
     animation-fill-mode: forwards;
   }
   
   .smallLunchList {
-    animation: 1s sizeDownMobile;
+    animation: 1s sizeDown600;
     animation-fill-mode: forwards;
   }
 
-  @keyframes sizeUpMobile {
+  @keyframes sizeUp600 {
     from {
       width: 30vh;
       height: 10vh;
@@ -966,7 +1016,7 @@ address {
     }
   }
   
-  @keyframes sizeDownMobile {
+  @keyframes sizeDown600 {
     from {
       width: 95%;
       height: 100%;
@@ -979,6 +1029,18 @@ address {
   }
 
   /* ----------------------ETUSIVU---------------------- */
+
+  #headerLeft, #headerRight {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #headerMiddle {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
 
   .storyContainer, nav {
     font-size: calc(1.3em + 1vmin);
@@ -999,24 +1061,6 @@ address {
 
   #headerMiddle #logoLink {
     width: 30vw;
-  }
-
-  #mainpageRight {
-    display: none;
-  }
-
-  #mainpageLeft {
-    width: 100%;
-  }
-
-  .mainpageHeader {
-    margin: 4vh auto;
-    border-radius: 20px 20px 20px 20px;
-    width: 90%;
-  }
-
-  .mainpageHeader h1 {
-    font-size: calc(1.4em + 1vmin);
   }
 
   /* ----------------------FOOTER---------------------- */
