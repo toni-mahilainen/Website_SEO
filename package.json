@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "connect-history-api-fallback": "^1.6.0",
+    "express-history-api-fallback": "^2.2.1",
     "google-maps-react": "^2.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

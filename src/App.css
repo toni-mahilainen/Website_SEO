@@ -627,6 +627,7 @@ footer h4 {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 1.6em;
   padding: 0.5vh;
   text-align: center;
   font-size: calc(0.3vw + 1vmin);
@@ -854,7 +855,7 @@ address {
     position: relative;
     transform: rotate(0deg);
     height: fit-content;
-    width: 100%;
+    width: fit-content;
     left: 0;
     top: -12%;
     font-size: calc(0.8em + 1vmin);
@@ -946,7 +947,7 @@ address {
   #contactInfo, #openInfo {
     width: 50%;
     text-align: center;
-    margin: 2.0vh 0;
+    margin: 2vh 0;
     padding: 0 2vh;
   }
 
@@ -991,7 +992,7 @@ address {
 
   .mainpageLunchDiv h4 {
     top: -11%;
-    font-size: calc(1.1em + 1vmin);
+    font-size: calc(0.9em + 1vmin);
   }
 
   .largeLunchList {
@@ -1094,7 +1095,71 @@ address {
     border-bottom: 1px solid white;
   }
 
+  @media only screen and (orientation: landscape) {
+    #openInfo {
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid white;
+      border-right: none;
+    }
+
+    #footerWrapper {
+      width: 100%;
+    }
+
+    #googleMap {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   /* ----------------------FOOTER---------------------- */
+}
+
+@media only screen and (max-height: 400px) {
+  .App {
+    background-image: url(../src/Images/back.jpg);
+  }
+
+  #lunchListWrapper {
+    width: 35vh;
+    height: 10vh;
+  }
+
+  .largeLunchList {
+    animation: 1s sizeUpHeight400;
+    animation-fill-mode: forwards;
+  }
+  
+  .smallLunchList {
+    animation: 1s sizeDownHeight400;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes sizeUpHeight400 {
+    from {
+      width: 35vh;
+      height: 10vh;
+    }
+  
+    to {
+      width: 90%;
+      height: 100%;
+    }
+  }
+  
+  @keyframes sizeDownHeight400 {
+    from {
+      width: 90%;
+      height: 100%;
+    }
+  
+    to {
+      width: 35vh;
+      height: 10vh;
+    }
+  }
 }
 
 /* --------------------------------RESPONSIIVISUUS-------------------------------- */

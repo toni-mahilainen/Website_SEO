@@ -75,6 +75,38 @@ import Palaute from './Palaute';
 
 class App extends Component {
     componentDidMount() {
+        window.onorientationchange = function () { window.location.reload(); };
+
+        let path = window.location.pathname;
+        switch (path) {
+            case "/":
+                let etusivu = document.getElementById("etusivuLink");
+                etusivu.classList.add("visibleLink");
+                break;
+            case "/Yritys":
+                let yritys = document.getElementById("yritysLink");
+                yritys.classList.add("visibleLink");
+                break;
+            case "/Kahvila_Ravintola":
+                let kahvilaRavintola = document.getElementById("kahvilaRavintolaLink");
+                kahvilaRavintola.classList.add("visibleLink");
+                break;
+            case "/Huoltamo":
+                let huoltamo = document.getElementById("huoltamoLink");
+                huoltamo.classList.add("visibleLink");
+                break;
+            case "/Palikkala":
+                let palikkala = document.getElementById("palikkalaLink");
+                palikkala.classList.add("visibleLink");
+                break;
+            case "/Palaute":
+                let palaute = document.getElementById("palauteLink");
+                palaute.classList.add("visibleLink");
+                break;
+            default:
+                break;
+        }
+
         let screenwidth = window.screen.width;
 
         if (screenwidth < 992) {
@@ -153,12 +185,12 @@ class App extends Component {
                 <Router>
                     <nav id="nav" className="navbar navbar-expand-lg" onMouseEnter={this.heightUp} onMouseLeave={this.heightDown}>
                         <ul className="navbar-nav mr-auto ml-auto">
-                            <li><Link onClick={this.addActiveClass} to={"/"} className="nav-link visibleLink">Etusivu</Link></li>
-                            <li><Link onClick={this.addActiveClass} to={"/Yritys"} className="nav-link">Yritys</Link></li>
-                            <li><Link onClick={this.addActiveClass} to={"/Kahvila_Ravintola"} className="nav-link">Kahvila / Ravintola</Link></li>
-                            <li><Link onClick={this.addActiveClass} to={"/Huoltamo"} className="nav-link">Huoltamo</Link></li>
-                            <li><Link onClick={this.addActiveClass} to={"/Palikkala"} className="nav-link">SEO Palikkala</Link></li>
-                            <li><Link onClick={this.addActiveClass} to={"/Palaute"} className="nav-link">Palaute</Link></li>
+                            <li><Link id="etusivuLink" onClick={this.addActiveClass} to={"/"} className="nav-link">Etusivu</Link></li>
+                            <li><Link id="yritysLink" onClick={this.addActiveClass} to={"/Yritys"} className="nav-link">Yritys</Link></li>
+                            <li><Link id="kahvilaRavintolaLink" onClick={this.addActiveClass} to={"/Kahvila_Ravintola"} className="nav-link">Kahvila / Ravintola</Link></li>
+                            <li><Link id="huoltamoLink" onClick={this.addActiveClass} to={"/Huoltamo"} className="nav-link">Huoltamo</Link></li>
+                            <li><Link id="palikkalaLink" onClick={this.addActiveClass} to={"/Palikkala"} className="nav-link">SEO Palikkala</Link></li>
+                            <li><Link id="palauteLink" onClick={this.addActiveClass} to={"/Palaute"} className="nav-link">Palaute</Link></li>
                         </ul>
                     </nav>
                     <Switch>
