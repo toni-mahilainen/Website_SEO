@@ -9,6 +9,7 @@ class Etusivu extends Component {
         let lunchList = document.getElementById("tblLunchList");
         let verticalText = document.getElementById("verticalText");
 
+        lunchList.classList.add("visibleText");
         lunchDiv.classList.remove("smallLunchList");
         lunchDiv.classList.add("largeLunchList");
 
@@ -37,6 +38,8 @@ class Etusivu extends Component {
 
         setTimeout(
             function () {
+                lunchList.classList.remove("visibleText");
+                lunchList.classList.add("hiddenText");
                 verticalText.classList.remove("hiddenText");
                 verticalText.classList.add("visibleText");
             }
@@ -56,7 +59,6 @@ class Etusivu extends Component {
                         <div id="lunchListWrapper" onMouseEnter={this.lunchlistSizeUp} onMouseLeave={this.lunchlistSizeDown}>
                             <Lounaslista />
                         </div>
-                        <h4 id="verticalText">LOUNASLISTA</h4>
                     </div>
                 </section>
                 <section id="mainpageRight">

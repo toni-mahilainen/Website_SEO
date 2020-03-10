@@ -228,6 +228,7 @@ nav a:hover {
   height: 30vh;
   align-self: center;
   justify-self: center;
+  overflow: visible;
 }
 
 .mainpageLunchDiv #lunchMain {
@@ -243,12 +244,11 @@ nav a:hover {
 }
 
 .mainpageLunchDiv h4 {
-  position: absolute;
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
   height: fit-content;
-  align-self: center;
-  left: -45px;
+  width: fit-content;
   margin: auto;
+  writing-mode: vertical-lr;
 }
 
 .mainpageHeader h1 {
@@ -283,7 +283,6 @@ nav a:hover {
   animation: 1s Visible;
   animation-delay: 0.7s;
   animation-fill-mode: forwards;
-  
 }
 
 .hiddenText {
@@ -391,6 +390,7 @@ nav a:hover {
 }
 
 #lunchMain {
+  display: flex;
   margin: 4vh auto;
   padding: 1vw;
   width: fit-content;
@@ -398,6 +398,7 @@ nav a:hover {
   background-color: rgba(0, 0, 158, 0.6);
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
   border-radius: 10px;
+  overflow: visible;
 }
 
 #tblLunchList th, td{
@@ -807,10 +808,6 @@ address {
     display: flex;
     justify-content: center;
   }
-
-  .mainpageLunchDiv h4 {
-    left: -40px;
-  }
 }
 
 @media only screen and (max-width: 990px) {
@@ -856,9 +853,8 @@ address {
     transform: rotate(0deg);
     height: fit-content;
     width: fit-content;
-    left: 0;
-    top: -12%;
     font-size: calc(0.8em + 1vmin);
+    writing-mode: horizontal-tb;
   }
 
   #tblLunchList td {
@@ -991,7 +987,6 @@ address {
   /* ----------------------ETUSIVU---------------------- */
 
   .mainpageLunchDiv h4 {
-    top: -11%;
     font-size: calc(0.9em + 1vmin);
   }
 
