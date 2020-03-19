@@ -15,6 +15,17 @@ class Lounaslista extends Component {
         this.getFacebookFeed();
     }
 
+    showLunchList() {
+        let lunchList = document.getElementById("tblLunchList");
+        let verticalText = document.getElementById("verticalText");
+
+        verticalText.classList.remove("visibleText");
+        verticalText.classList.add("hiddenText");
+
+        lunchList.classList.remove("hiddenText");
+        lunchList.classList.add("visibleText");
+    }
+
     getFacebookFeed() {
         // lähetetään GET -pyyntö facebookin Graph API:lle
         // Parametreina page ID, posts (jotta saadaan vastauksena julkiset julkaisut) sekä Access Token, joka varmistaa tunnistautumisen
@@ -40,7 +51,7 @@ class Lounaslista extends Component {
                             if (rightMessage) {
                                 this.setState({
                                     LunchList: message
-                                });
+                                },this.showLunchList);
                             }
                         }
                     }

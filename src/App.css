@@ -117,9 +117,8 @@ header img {
 }
 
 nav {
-  height: fit-content;
+  height: 5vh;
   background-color: rgba(0, 0, 158, 0.8);
-  border-radius: 50% 50% 25% 25% / 0% 0% 20% 20%;
 }
 
 nav a {
@@ -137,10 +136,6 @@ nav a:hover {
   height: fit-content;
 }
 
-.largeNav {
-  border-radius: 0% 0% 95% 95% / 0% 0% 10% 10%;
-}
-
 .visibleLink {
   display: block;
 }
@@ -156,7 +151,7 @@ nav a:hover {
 #mainpage {
   text-align: center;
   overflow: auto;
-  height: 73vh;
+  height: 75vh;
   display: flex;
 }
 
@@ -345,7 +340,6 @@ nav a:hover {
   text-align: center;
   overflow: auto;
   height: 75vh;
-  
 }
 
 #companyUpper {
@@ -402,7 +396,7 @@ nav a:hover {
 }
 
 #tblLunchList th, td{
-  padding: 2vh;
+  padding: 1.5vh;
 }
 
 #tblLunchList th {
@@ -425,6 +419,86 @@ nav a:hover {
   overflow: auto;
   height: 75vh;
 }
+
+#serviceLower h4 {
+  margin: 2vh auto;
+}
+
+.fa-circle {
+  font-size: 0.7em;
+}
+
+/* ------------------Huoltopalvelut------------------ */
+
+.services, .tests {
+  padding: 1vw;
+  width: 50%;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+.services {
+  margin: 3vh 35% 3vh 15%;
+}
+
+.tests {
+  margin: 3vh 15% 3vh 35%;
+}
+
+#servicesList, #testList {
+  text-align: left;
+}
+
+/* ------------------Huoltopalvelut------------------ */
+
+/* ---------------------Varaosat--------------------- */
+
+.spareParts, .tyres, .gas, .heatOil {
+  padding: 1vw;
+  width: 50%;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+.spareParts, .gas {
+  margin: 3vh 35% 3vh 15%;
+}
+
+.tyres, .heatOil {
+  margin: 3vh 15% 3vh 35%;
+}
+
+/* ---------------------Varaosat--------------------- */
+
+/* ---------------------Autopesu--------------------- */
+
+.carWashHall, .washPrograms {
+  padding: 1vw;
+  width: 50%;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+.carWashHall {
+  margin: 3vh 35% 3vh 15%;
+}
+
+.washPrograms {
+  margin: 3vh 15% 3vh 35%;
+}
+
+/* ---------------------Autopesu--------------------- */
+
+
 
 /* --------------------------------HUOLTAMO-------------------------------- */
 
@@ -506,7 +580,7 @@ form button {
   font-weight: bold;
   letter-spacing: 2px;
   border-radius: 10px;
-  margin-top: 1.5vh;
+  margin: 0.5vw;
   outline: none;
 }
 
@@ -535,9 +609,8 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 12vh;
+  height: 10vh;
   background-color: rgba(0, 0, 158, 0.8);
-  border-radius: 50% 50% 0% 0% / 25% 25% 0% 0%;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 158, 0.3);
 }
 
@@ -555,7 +628,7 @@ footer {
 
 .smallFooter {
   animation: 1s heightDown;
-  height: 12vh;
+  height: 10vh;
 }
 
 footer section {
@@ -636,7 +709,7 @@ footer h4 {
 
 @keyframes heightUp {
   from {
-    height: 12vh;
+    height: 10vh;
   }
 
   to {
@@ -650,7 +723,7 @@ footer h4 {
   }
 
   to {
-    height: 12vh;
+    height: 10vh;
   }
 }
 
@@ -937,7 +1010,6 @@ address {
   footer {
     height: fit-content;
     position: relative;
-    border-radius: 90% 90% 0% 0% / 10% 10% 0% 0%;
   }
 
   #contactInfo, #openInfo {
@@ -1060,10 +1132,6 @@ address {
   }
 
   /* ----------------------FOOTER---------------------- */
-
-  footer {
-    border-radius: 100% 100% 0% 0% / 4% 4% 0% 0%;
-  }
 
   footer section {
     font-size: calc(1em + 1vmin);

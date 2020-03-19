@@ -4,12 +4,32 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Lounaslista from './Lounaslista';
 
 class Etusivu extends Component {
+    componentDidMount() {
+        setTimeout(
+            function () {
+                let verticalText = document.getElementById("verticalText");
+                let lunchList = document.getElementById("tblLunchList");
+
+                lunchList.classList.remove("visibleText");
+                lunchList.classList.add("hiddenText");
+
+                if (verticalText.classList.contains("hiddenText")) {
+                    verticalText.classList.remove("hiddenText");
+                    verticalText.classList.add("visibleText");
+                }
+            }
+            , 400);
+
+    }
+
     lunchlistSizeUp() {
         let lunchDiv = document.getElementById("lunchListWrapper");
         let lunchList = document.getElementById("tblLunchList");
         let verticalText = document.getElementById("verticalText");
 
+        lunchList.classList.remove("hiddenText");
         lunchList.classList.add("visibleText");
+
         lunchDiv.classList.remove("smallLunchList");
         lunchDiv.classList.add("largeLunchList");
 
