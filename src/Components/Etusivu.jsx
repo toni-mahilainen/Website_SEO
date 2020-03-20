@@ -77,7 +77,10 @@ class Etusivu extends Component {
                     </div>
                     <div className="mainpageLunchDiv">
                         <div id="lunchListWrapper" onMouseEnter={this.lunchlistSizeUp} onMouseLeave={this.lunchlistSizeDown}>
-                            <Lounaslista />
+                            <Lounaslista
+                                token="EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
+                                pageId="106628357569438"
+                            />
                         </div>
                     </div>
                 </section>

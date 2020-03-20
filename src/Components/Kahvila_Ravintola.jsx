@@ -20,7 +20,12 @@ class Kahvila extends Component {
                     </Col>
                     <Col id="pasteries">
                         <ul>
-                            <li><span className="fas fa-circle"></span> Munkit</li>
+                            <li><span className="fas fa-circle"></span> Munkit
+                                <ul>
+                                    <li className="nested"><span className="far fa-circle"></span> Rinkilät</li>
+                                    <li className="nested"><span className="far fa-circle"></span> Omena, mustikka ja metsämansikka</li>
+                                </ul>
+                            </li>
                             <li><span className="fas fa-circle"></span> Pullat</li>
                             <li><span className="fas fa-circle"></span> Viinerit</li>
                             <li><span className="fas fa-circle"></span> Täytetyt sämpylät</li>
@@ -58,7 +63,10 @@ class Lounas extends Component {
                         </Col>
                     </Row>
                 </Container>
-                <Lounaslista />
+                <Lounaslista
+                    token="EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
+                    pageId="106628357569438"
+                />
             </div>
         );
     }
@@ -71,7 +79,7 @@ class Ravintola extends Component {
                 <Container bsPrefix="kitchenLeft">
                     <Row>
                         <Col>
-                            <h4>X Meal <br/> hampurilaiset ja ateriat</h4>
+                            <h4>X Meal <br /> hampurilaiset ja ateriat</h4>
                             <h1>Kuva</h1>
                         </Col>
                         <Col>

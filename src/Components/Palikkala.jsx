@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
+import Lounaslista from './Lounaslista';
 
 class Lounas extends Component {
     render() {
         return (
             <header>
-                <h1>Lounas</h1>
+                <Lounaslista
+                    token="EAAI41FdBRxwBAGO4MSj4mMPwpWuJ3f9iZA05R0VaNSjEHIiGZC0ME6mokRvHls1Gyc53PMwKByrCw5vkN0oxm15hDqTrnInBsbp84WpOkDNRFJHmdFdLdaIFmOL2EsEK4My7mjolqAdMFZCKH2OTZAuaKulnlijp988hEz9k4wZDZD"
+                    pageId="105259191116036"
+                />
             </header>
         );
     }
@@ -70,7 +74,7 @@ class Palikkala extends Component {
 
     handleDropdownChange(select) {
         let selectValue = select.target.value;
-        
+
         if (selectValue === "lunch") {
             this.setState({
                 LunchVisible: true,

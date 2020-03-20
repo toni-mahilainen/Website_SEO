@@ -27,14 +27,23 @@ class Lounaslista extends Component {
     }
 
     getFacebookFeed() {
+        /*
+        PageID:
+        OMA (Koski): 106628357569438
+        SEO (Palikkala): 105259191116036
+        
+        AccessToken:
+        OMA (Koski): EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD
+        SEO (Palikkala): EAAI41FdBRxwBAGO4MSj4mMPwpWuJ3f9iZA05R0VaNSjEHIiGZC0ME6mokRvHls1Gyc53PMwKByrCw5vkN0oxm15hDqTrnInBsbp84WpOkDNRFJHmdFdLdaIFmOL2EsEK4My7mjolqAdMFZCKH2OTZAuaKulnlijp988hEz9k4wZDZD
+        */
+
         // lähetetään GET -pyyntö facebookin Graph API:lle
         // Parametreina page ID, posts (jotta saadaan vastauksena julkiset julkaisut) sekä Access Token, joka varmistaa tunnistautumisen
-        axios.get('https://graph.facebook.com/106628357569438/posts?', /* OMA */
-            // axios.get('https://graph.facebook.com/792968771068499/posts?', /* SEO */
+
+        axios.get('https://graph.facebook.com/' + this.props.pageId + '/posts?',
             {
                 params: {
-                    /* OMA */ access_token: "EAAI41FdBRxwBAMTuA8V8RKhNeNAk2aCbxSR3sNeIIoIppLnx1ZBTz8DuKyivvDoy0X57SR72BEwZBTpXlJQHkDfjFNdZATUfIO2NnNEN3H6OjYU7HTmV2SYZBodhqyMXQJcxg6U28kIGohRJGOvYOT9bdiCZA8kfzmyCsgcKZCFwZDZD"
-                    // /* SEO */ access_token: "EAAI41FdBRxwBALZBOCuPTc60e8YyJEjrSy97nRvXZBzTq6BXfIKadEgYF6tBnPHCMSokeH6w8yOsQJZALB49pYn8i8MiguOYhDaZBflivfKwiZCHXaMUY2Rq9eLFLQTALZAudyaZBbaNRwZAWUDvAyh0oW51OZAndEsFjeTFUZCfokCgZDZD"
+                    access_token: this.props.token
                 }
             })
             .then(response => {
@@ -51,7 +60,7 @@ class Lounaslista extends Component {
                             if (rightMessage) {
                                 this.setState({
                                     LunchList: message
-                                },this.showLunchList);
+                                }, this.showLunchList);
                             }
                         }
                     }
