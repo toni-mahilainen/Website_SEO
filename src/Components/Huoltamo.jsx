@@ -148,9 +148,9 @@ class Autopesu extends Component {
                                 <li><span className="fas fa-circle"></span> 10 harjallista pesuohjelmaa</li>
                                 <li><span className="fas fa-circle"></span> Ajoneuvon maksimi koko
                                     <ul>
-                                        <li><span className="far fa-circle"></span> Korkeus: 2,7 m</li>
-                                        <li><span className="far fa-circle"></span> Leveys: 2,24 m</li>
-                                        <li><span className="far fa-circle"></span> Pituus: 5,5 m</li>
+                                        <li className="nested"><span className="far fa-circle"></span> Korkeus: 2,7 m</li>
+                                        <li className="nested"><span className="far fa-circle"></span> Leveys: 2,24 m</li>
+                                        <li className="nested"><span className="far fa-circle"></span> Pituus: 5,5 m</li>
                                     </ul>
                                 </li>
                                 <li><span className="fas fa-circle"></span> Pesupassilla joka kuudes (6.) peruspesu ilmainen</li>

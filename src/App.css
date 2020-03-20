@@ -375,17 +375,39 @@ nav a:hover {
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
 
 #coffeeRestaurant {
+  text-align: center;
   overflow: auto;
   height: 75vh;
 }
 
-#coffeeRestaurantUpper {
-  text-align: center;
+/* ------------------Kahvila------------------ */
+
+.cafeteria {
+  margin: 3vh auto;
+  padding: 1vw;
+  width: 50%;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+#pasteries {
+  text-align: left;
+}
+
+/* ------------------Kahvila------------------ */
+
+/* ------------------Lounas------------------ */
+
+#lunchWrapper {
+  display: flex;
 }
 
 #lunchMain {
   display: flex;
-  margin: 4vh auto;
+  margin: 3vh auto;
   padding: 1vw;
   width: fit-content;
   height: fit-content;
@@ -408,6 +430,39 @@ nav a:hover {
   font-size: calc(0.6em + 1vmin);
 }
 
+.lunchLeft {
+  margin: 3vh auto;
+  padding: 1vw;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+/* ------------------Lounas------------------ */
+
+/* ------------------Keittiö------------------ */
+
+#kitchenWrapper {
+  display: flex;
+}
+
+.kitchenLeft, .kitchenRight {
+  margin: 3vh auto;
+  padding: 1vw;
+  height: fit-content;
+  background-color: rgba(0, 0, 158, 0.6);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+#fillings {
+  margin-top: 2vh;
+}
+
+/* ------------------Keittiö------------------ */
 
 
 /* --------------------------------KAHVILA_RAVINTOLA-------------------------------- */
@@ -496,8 +551,11 @@ nav a:hover {
   margin: 3vh 15% 3vh 35%;
 }
 
-/* ---------------------Autopesu--------------------- */
+.nested {
+  margin-left: 1em;
+}
 
+/* ---------------------Autopesu--------------------- */
 
 
 /* --------------------------------HUOLTAMO-------------------------------- */
@@ -766,7 +824,7 @@ hr {
   width: 50%;
   background-color: rgba(0, 0, 158, 0.8);
   border-radius: 50% 50% 40% 40% / 0% 0% 100% 100%;
-  box-shadow: 0px 8px 5px 0px rgba(0, 0, 158, 0.3);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 158, 0.3);
 }
 
 .subNav {
