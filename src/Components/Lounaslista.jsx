@@ -115,6 +115,21 @@ class Lounaslista extends Component {
                             <tr>
                                 <td>{lunchListArray[6]}</td>
                             </tr>
+                            <tr>
+                                <td>{lunchListArray[7]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[8]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[9]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[10]}</td>
+                            </tr>
+                            <tr>
+                                <td>{lunchListArray[11]}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -384,7 +384,7 @@ nav a:hover {
 
 .cafeteria {
   margin: 3vh auto;
-  padding: 1vw;
+  padding: 1em;
   width: 50%;
   height: fit-content;
   background-color: rgba(0, 0, 158, 0.6);
@@ -414,7 +414,10 @@ nav a:hover {
   background-color: rgba(0, 0, 158, 0.6);
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
   border-radius: 10px;
-  overflow: visible;
+}
+
+#tblLunchList {
+  overflow: auto;
 }
 
 #tblLunchList th, td{
@@ -432,7 +435,7 @@ nav a:hover {
 
 .lunchLeft {
   margin: 3vh auto;
-  padding: 1vw;
+  padding: 1em;
   height: fit-content;
   background-color: rgba(0, 0, 158, 0.6);
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
@@ -450,7 +453,7 @@ nav a:hover {
 
 .kitchenLeft, .kitchenRight {
   margin: 3vh auto;
-  padding: 1vw;
+  padding: 1em;
   height: fit-content;
   background-color: rgba(0, 0, 158, 0.6);
   box-shadow: 0px 0px 15px 6px rgba(0, 0, 158, 0.3);
@@ -486,7 +489,7 @@ nav a:hover {
 /* ------------------Huoltopalvelut------------------ */
 
 .services, .tests {
-  padding: 1vw;
+  padding: 1em;
   width: 50%;
   height: fit-content;
   background-color: rgba(0, 0, 158, 0.6);
@@ -899,6 +902,49 @@ address {
   line-height: 2.7vh;
 }
 
+/* ------------------------Scrollbar------------------------ */
+
+#tblLunchList::-webkit-scrollbar, #palikkala::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+#tblLunchList::-webkit-scrollbar-track, #palikkala::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#tblLunchList::-webkit-scrollbar-thumb, #palikkala::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5) ;
+  border-radius: 6px;
+  border: 3px solid transparent;
+}
+
+#palikkala::-webkit-scrollbar,
+#company::-webkit-scrollbar,
+#coffeeRestaurant::-webkit-scrollbar,
+#service::-webkit-scrollbar,
+#contact::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+#palikkala::-webkit-scrollbar-track,
+#company::-webkit-scrollbar-track,
+#coffeeRestaurant::-webkit-scrollbar-track,
+#service::-webkit-scrollbar-track,
+#contact::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.5) ;
+}
+
+#palikkala::-webkit-scrollbar-thumb,
+#company::-webkit-scrollbar-thumb,
+#coffeeRestaurant::-webkit-scrollbar-thumb,
+#service::-webkit-scrollbar-thumb,
+#contact::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 158, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ------------------------Scrollbar------------------------ */
+
 @keyframes colorChange {
   from {
     color: white;
@@ -938,6 +984,14 @@ address {
     width: 80%;
     display: flex;
     justify-content: center;
+  }
+
+  #lunchWrapper, #kitchenWrapper {
+    display: block;
+  }
+
+  .lunchLeft, .kitchenLeft, .kitchenRight, .cafeteria {
+    width: fit-content;
   }
 }
 
@@ -1029,6 +1083,15 @@ address {
 
   /* ----------------------ETUSIVU---------------------- */
 
+  /* ----------------------HUOLTAMO---------------------- */
+
+  .services, .tests {
+    margin: 3vh 10% 3vh 10%;
+    width: 80%;
+  }
+
+  /* ----------------------HUOLTAMO---------------------- */
+
   .subHeader {
     display: none;
   }
@@ -1114,6 +1177,10 @@ address {
     background-image: url(../src/Images/backSmall.png);
   }
 
+  #palikkala, #company, #coffeeRestaurant, #service, #contact {
+    height: fit-content;
+  }
+
   /* ----------------------ETUSIVU---------------------- */
 
   .mainpageLunchDiv h4 {
@@ -1172,6 +1239,40 @@ address {
     font-size: calc(1.3em + 1vmin);
   }
 
+  /* ----------------------KAHVILA_RAVINTOLA---------------------- */
+
+  #lunchMain, .lunchLeft, .kitchenLeft, .cafeteria {
+    width: 90%;
+  }
+
+  .cafeteria .row {
+    display: block;
+  }
+
+  #pasteries {
+    font-size: calc(1.0em + 1vmin);
+    line-height: 1.7em;
+  }
+
+  .kitchenLeft .row {
+    display: block;
+  }
+
+  /* ----------------------KAHVILA_RAVINTOLA---------------------- */
+
+  /* ----------------------HUOLTAMO---------------------- */
+
+  .services, .tests {
+    margin: 3vh 5% 3vh 5%;
+    width: 90%;
+  }
+
+  .services .row, .tests .row {
+    display: block;
+  }
+
+  /* ----------------------HUOLTAMO---------------------- */
+
   .subNav {
     display: none;
   }
@@ -1182,7 +1283,7 @@ address {
   }
 
   #companyLower, #contactLower {
-    width: 70%;
+    width: 90%;
   }
 
   #headerMiddle #logoLink {
@@ -1216,7 +1317,7 @@ address {
     border-bottom: 1px solid white;
   }
 
-  @media only screen and (orientation: landscape) {
+  /* @media only screen and (orientation: landscape) {
     #openInfo {
       border-top: none;
       border-bottom: none;
@@ -1233,7 +1334,7 @@ address {
       margin-left: auto;
       margin-right: auto;
     }
-  }
+  } */
 
   /* ----------------------FOOTER---------------------- */
 }
@@ -1284,3 +1385,4 @@ address {
 }
 
 /* --------------------------------RESPONSIIVISUUS-------------------------------- */
+
